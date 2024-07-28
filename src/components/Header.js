@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [showDropdownOnScroll, setShowDropdownOnScroll] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
@@ -20,6 +22,27 @@ const Header = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY < lastScrollY) {
+      // Scrolling up
+      setShowDropdownOnScroll(true);
+    } else {
+      // Scrolling down
+      setShowDropdownOnScroll(false);
+    }
+
+    setLastScrollY(currentScrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [lastScrollY]);
+
   return (
     <StyledHeader>
       <div className="logo-container" onClick={handleLogoClick}>
@@ -32,6 +55,14 @@ const Header = () => {
         <button onClick={() => scrollToSection('contact')}>Contact</button>
       </nav>
       {isDropdownOpen && (
+        <DropdownMenu>
+          <button onClick={() => scrollToSection('home')}>Home</button>
+          <button onClick={() => scrollToSection('about')}>About</button>
+          <button onClick={() => scrollToSection('projects')}>Projects</button>
+          <button onClick={() => scrollToSection('contact')}>Contact</button>
+        </DropdownMenu>
+      )}
+      {showDropdownOnScroll && !isDropdownOpen && (
         <DropdownMenu>
           <button onClick={() => scrollToSection('home')}>Home</button>
           <button onClick={() => scrollToSection('about')}>About</button>
@@ -138,5 +169,3 @@ const DropdownMenu = styled.div`
 `;
 
 export default Header;
-
-

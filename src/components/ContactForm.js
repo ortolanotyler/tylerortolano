@@ -7,6 +7,7 @@ const ContactForm = () => {
     email: '',
     message: ''
   });
+  const [successMessage, setSuccessMessage] = useState('');
 
   const handleChange = (e) => {
     setFormData({
@@ -26,14 +27,14 @@ const ContactForm = () => {
         body: JSON.stringify(formData)
       });
       if (response.ok) {
-        alert('Message sent successfully!');
+        setSuccessMessage('Thank you for reaching out! I will be in touch soon.');
         setFormData({ name: '', email: '', message: '' });
       } else {
-        alert('Failed to send message.');
+        setSuccessMessage('Failed to send message. Please try again later.');
       }
     } catch (error) {
       console.error('Error:', error);
-      alert('An error occurred while sending the message.');
+      setSuccessMessage('An error occurred while sending the message. Please try again later.');
     }
   };
 
@@ -66,6 +67,7 @@ const ContactForm = () => {
         ></textarea>
         <button type="submit">Send</button>
       </form>
+      {successMessage && <p className="success-message">{successMessage}</p>}
     </StyledForm>
   );
 };
@@ -107,6 +109,15 @@ const StyledForm = styled.div`
       }
     }
   }
+
+  .success-message {
+  
+    margin-top: 1rem;
+    color: black;
+    font-size: 22px;
+    font-weight: bold;
+  }
 `;
 
 export default ContactForm;
+

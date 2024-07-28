@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
   * {
     margin: 0;
@@ -10,7 +10,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: ${({ theme }) => theme.colors.background};
     color: ${({ theme }) => theme.colors.text};
     margin: 0;
@@ -45,6 +45,7 @@ const GlobalStyles = createGlobalStyle`
 
   button {
     cursor: pointer;
+    font-family: 'Roboto', sans-serif;
   }
 `;
 
