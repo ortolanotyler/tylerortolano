@@ -33,7 +33,7 @@ const Header = () => {
 
 const StyledHeader = styled.header`
   background: ${({ theme }) => theme.colors.background};
-  padding: 1.5rem; /* Increase padding */
+  padding: 1.5rem;
   position: fixed;
   width: 100%;
   top: 0;
@@ -52,25 +52,25 @@ const StyledHeader = styled.header`
     transition: transform 0.1s;
 
     img {
-      height: 80px; /* Increase logo size */
+      height: 80px;
     }
 
     &:active {
-      transform: translateY(2px); /* Simulate pressed effect */
+      transform: translateY(2px);
     }
   }
 
   nav {
     display: flex;
     justify-content: center;
-    gap: 2.5rem; /* Increase gap between nav items */
+    gap: 2.5rem;
 
     button {
       background: none;
       border: none;
       color: ${({ theme }) => theme.colors.text};
       font-weight: bold;
-      font-size: 1.2rem; /* Increase font size */
+      font-size: 1.2rem;
       cursor: pointer;
 
       &:hover {
@@ -78,6 +78,26 @@ const StyledHeader = styled.header`
       }
     }
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+
+    .logo-container {
+      margin-bottom: 1rem;
+    }
+
+    nav {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    button {
+      font-size: 1rem;
+    }
+  }
 `;
 
 export default Header;
+
