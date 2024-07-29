@@ -40,7 +40,7 @@ const ContactForm = () => {
 
   return (
     <StyledForm onSubmit={handleSubmit}>
-      <h2>Contact Me</h2>
+   
       <form>
         <input
           type="text"
@@ -87,7 +87,7 @@ const StyledForm = styled.div`
     flex-direction: column;
     gap: 1rem;
     width: 100%;
-    max-width: 500px;
+    max-width: 400px;
 
     input, textarea {
       padding: 1rem;

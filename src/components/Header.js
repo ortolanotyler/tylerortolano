@@ -8,10 +8,12 @@ const Header = () => {
 
   const scrollToSection = (sectionId) => {
     const section = document.getElementById(sectionId);
-    const yOffset = -80; // Adjust this value to match the height of your navbar
-    const yPosition = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
-    window.scrollTo({ top: yPosition, behavior: 'smooth' });
-    setShowNavItems(false); // Hide nav items after navigation
+    if (section) {
+      const yOffset = -80; // Adjust this value to match the height of your navbar
+      const yPosition = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: yPosition, behavior: 'smooth' });
+      setShowNavItems(false); // Hide nav items after navigation
+    }
   };
 
   const logo = `${process.env.PUBLIC_URL}/Images/logo.png`; // Adjust the path as needed
@@ -63,18 +65,34 @@ const Header = () => {
     };
   }, [jiggleCount]);
 
+  const codepenLogo = `${process.env.PUBLIC_URL}/images/codepen.png`;
+  const githubLogo = `${process.env.PUBLIC_URL}/images/github.png`;
+  const linkedinLogo = `${process.env.PUBLIC_URL}/images/linkedin.png`;
+
   return (
     <StyledHeader jiggle={jiggleCount > 0}>
       <div className="logo-container" onClick={handleLogoClick}>
         <img src={logo} alt="Logo" />
       </div>
-      <nav className={showNavItems ? 'show' : ''}>
+  
+      <div className="logos">
+        <a href="https://codepen.io/Tyler-Ortolano-the-solid" target="_blank" rel="noopener noreferrer">
+          <img src={codepenLogo} alt="CodePen" />
+        </a>
+        <a href="https://github.com/ortolanotyler" target="_blank" rel="noopener noreferrer">
+          <img src={githubLogo} alt="GitHub" />
+        </a>
+        <a href="https://www.linkedin.com/in/tylerortolano/" target="_blank" rel="noopener noreferrer">
+          <img src={linkedinLogo} alt="LinkedIn" />
+        </a>
+      </div>
+      <MobileMenu show={showNavItems}>
         <button onClick={() => scrollToSection('home')}>Home</button>
         <button onClick={() => scrollToSection('about')}>About</button>
         <button onClick={() => scrollToSection('skills')}>Skills</button>
         <button onClick={() => scrollToSection('projects')}>Projects</button>
         <button onClick={() => scrollToSection('contact')}>Contact</button>
-      </nav>
+      </MobileMenu>
     </StyledHeader>
   );
 };
@@ -86,21 +104,12 @@ const jiggle = keyframes`
   75% { transform: rotate(3deg); }
 `;
 
-const fadeIn = keyframes`
+const slideIn = keyframes`
   from {
-    opacity: 0;
+    transform: translateX(-100%);
   }
   to {
-    opacity: 1;
-  }
-`;
-
-const fadeOut = keyframes`
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
+    transform: translateX(0);
   }
 `;
 
@@ -131,6 +140,10 @@ const StyledHeader = styled.header`
       width: 100px;
     }
 
+    &:hover {
+      transform: scale(1.1);
+    }
+
     &:active {
       transform: translateY(4px);
     }
@@ -141,10 +154,10 @@ const StyledHeader = styled.header`
     justify-content: flex-start;
     align-items: center;
     flex-grow: 1;
-    gap: 2.5rem;
+   
     margin-left: 1rem;
     opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
     flex-wrap: wrap;
 
     button {
@@ -152,7 +165,7 @@ const StyledHeader = styled.header`
       border: none;
       color: ${({ theme }) => theme.colors.text};
       font-weight: bold;
-      font-size: 1.2rem;
+      font-size: 1rem;
       cursor: pointer;
       transition: font-size 0.3s;
 
@@ -166,21 +179,71 @@ const StyledHeader = styled.header`
     }
   }
 
-  @media (max-width: 768px) {
-    nav {
-      button {
-        font-size: 0.8rem; /* Adjust the font size for smaller screens */
+  .logos {
+    display: flex;
+    gap: 1rem;
+    margin-right: 10%;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    img {
+      width: 30px;
+      height: 30px;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: scale(1.1);
       }
     }
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     nav {
-      button {
-        font-size: 0.8rem; /* Further adjust the font size for very small screens */
-      }
+      display: none;
     }
   }
 `;
 
+const MobileMenu = styled.div`
+  display: none;
+  position: fixed;
+  top: 120px; /* Adjust according to the header height */
+  left: 0;
+  width: 100%;
+  background: ${({ theme }) => theme.colors.background};
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  animation: ${slideIn} 0.3s forwards;
+  flex-direction: row; /* Change to row for horizontal alignment */
+  justify-content: space-around; /* Space out items evenly */
+  align-items: center;
+
+  button {
+    padding: 1rem;
+    background: none;
+    border: none;
+    color: ${({ theme }) => theme.colors.text};
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &:hover {
+      background: ${({ theme }) => theme.colors.primary};
+      color: white;
+    }
+  }
+
+  ${({ show }) =>
+    show &&
+    `
+    display: flex;
+  `}
+`;
+
 export default Header;
+

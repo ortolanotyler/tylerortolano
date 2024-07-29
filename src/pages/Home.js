@@ -1,24 +1,32 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
+import { Helmet } from 'react-helmet';
 
 const Home = () => {
   const headshot = `${process.env.PUBLIC_URL}/Images/linkedin.jpeg`;
-  const skyline = `${process.env.PUBLIC_URL}/Images/skyline2.png`;
 
   return (
     <HomeContainer id="home">
+      <Helmet>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap"
+          rel="stylesheet"
+        />
+      </Helmet>
       <TextContainer>
         <br />
         <br />
+        <br />
         <h1>Hello! My name is</h1>
-        <h1 className="accent">Tyler.</h1>
-      
+
+        <h1 className="accent">Tyler</h1>
+
         <HeadshotContainer>
           <Headshot src={headshot} alt="Headshot" />
         </HeadshotContainer>
-        <br/>
+        <br />
         <h2>I'm a full-stack developer.</h2>
-        <SkylineImage src={skyline} alt="Skyline" />
+        <br />
       </TextContainer>
     </HomeContainer>
   );
@@ -59,30 +67,31 @@ const HomeContainer = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 120px; /* Add enough padding to ensure the content starts below the header */
+  padding-top: 150px; /* Add enough padding to ensure the content starts below the header */
   text-align: center;
 `;
 
 const TextContainer = styled.div`
-  margin-top: 20px;
+  margin-top: 30px;
 
   h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 400;
     color: ${({ theme }) => theme.colors.text};
     margin: 0;
 
     &.accent {
-      font-size: 3.5rem;
+      font-size: 9rem; /* Twice as big as the previous 4.5rem */
       font-weight: 700;
-      color: ${({ theme }) => theme.colors.primary};
+      color: #f7931a; /* Bitcoin orange */
+      font-family: 'Playfair Display', serif; /* New font */
     }
 
     @media (max-width: 768px) {
       font-size: 2rem;
 
       &.accent {
-        font-size: 2.5rem;
+        font-size: 5rem; /* Adjusted for smaller screens */
       }
     }
   }
@@ -90,8 +99,6 @@ const TextContainer = styled.div`
   h2 {
     font-size: 2rem;
     font-weight: 400;
-   
-  
     color: ${({ theme }) => theme.colors.secondary};
 
     @media (max-width: 768px) {
@@ -102,7 +109,6 @@ const TextContainer = styled.div`
 
 const HeadshotContainer = styled.div`
   margin: 1.5rem;
-  
 `;
 
 const Headshot = styled.img`
@@ -111,8 +117,8 @@ const Headshot = styled.img`
   border-radius: 50%;
   object-fit: cover;
   border: 5px solid black; /* Black border */
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Subtle box shadow */
-  animation: ${bounce} 1.9s ease;
+    box-shadow: 0.03rem 0.03rem 0.5rem rgba(0, 0, 0, 0.3);
+  animation: ${bounce} 2.9s ease;
   animation-delay: 0.01s;
 
   @media (max-width: 768px) {

@@ -5,7 +5,9 @@ import Gallery2 from '../components/Gallery2';
 
 const Contact = () => (
   <StyledContact id="contact">
+    <h2>Contact Me</h2>
     <ContactForm />
+    <br />
     <Gallery2 />
   </StyledContact>
 );

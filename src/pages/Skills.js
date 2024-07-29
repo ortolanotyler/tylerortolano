@@ -1,19 +1,20 @@
-// pages/Projects.js
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
+import Gallery from '../components/Gallery';
 import useIntersectionObserver from '../hooks/IntersectionObserver';
-import OfferSection from '../components/OfferSection';
 
-const Projects = () => {
-  const [ref, isIntersecting] = useIntersectionObserver({ threshold: 0.1 });
+const Skills = () => {
+  const [ref, isIntersecting] = useIntersectionObserver({ threshold: 0.2 });
 
   return (
-    <StyledProjects id="projects">
-      <FadeInSection ref={ref} isIntersecting={isIntersecting}>
-        <h2>My Projects</h2>
-      </FadeInSection>
-      <OfferSection/>
-    </StyledProjects>
+    <StyledSkills id="skills">
+      <div className="container">
+        <FadeInSection ref={ref} isIntersecting={isIntersecting}>
+          <h2>Skills</h2>
+        </FadeInSection>
+        <Gallery />
+      </div>
+    </StyledSkills>
   );
 };
 
@@ -31,24 +32,26 @@ const FadeInSection = styled.div`
   animation: ${({ isIntersecting }) => isIntersecting && fadeIn} 1s forwards;
 `;
 
-const StyledProjects = styled.section`
-  padding: 3rem;
+const StyledSkills = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
   padding-top: 100px; /* Add padding to account for the fixed navbar */
   background: ${({ theme }) => theme.colors.background};
   color: ${({ theme }) => theme.colors.text};
   min-height: 100vh;
 
-  h2 {
+  .container {
+    max-width: 600px;
+    width: 100%;
     text-align: center;
-    margin-bottom: 2rem;
-    color: ${({ theme }) => theme.colors.primary};
-  }
 
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    h2 {
+      margin-bottom: 2rem;
+    }
   }
 `;
 
-export default Projects;
+export default Skills;
