@@ -15,7 +15,7 @@ const ProfileCard = () => {
 const StyledCard = styled(Card)`
   position: relative;
   width: 100%;
-  max-width: 300px;
+  max-width: 400px;
   margin: 0 auto;
   border-radius: 15px;
   overflow: visible;

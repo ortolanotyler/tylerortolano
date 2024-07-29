@@ -92,7 +92,7 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
-  max-width: 50rem;
+  max-width: 40rem;
   margin: 0 auto;
 
   @media (min-width: 640px) {
