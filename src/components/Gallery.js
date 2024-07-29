@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Gallery = () => {
   const logoPairs = [
-    [`${process.env.PUBLIC_URL}/images/react1.png`, `${process.env.PUBLIC_URL}/Images/redux.png`],
+    [`${process.env.PUBLIC_URL}/Images/react1.png`, `${process.env.PUBLIC_URL}/Images/redux.png`],
     [`${process.env.PUBLIC_URL}/Images/nodejs.png`, `${process.env.PUBLIC_URL}/Images/express.png`],
     [`${process.env.PUBLIC_URL}/Images/postgresql.png`, `${process.env.PUBLIC_URL}/Images/sql2.png`],
     [`${process.env.PUBLIC_URL}/Images/html.png`, `${process.env.PUBLIC_URL}/Images/jasmine.png`],
