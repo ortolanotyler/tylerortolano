@@ -9,7 +9,7 @@ const Home = () => {
     <HomeContainer id="home">
       <Helmet>
         <link
-          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=League+Spartan:wght@700&display=swap"
           rel="stylesheet"
         />
       </Helmet>
@@ -18,15 +18,11 @@ const Home = () => {
         <br />
         <br />
         <h1>Hello! My name is</h1>
-
         <h1 className="accent">Tyler</h1>
-
         <HeadshotContainer>
           <Headshot src={headshot} alt="Headshot" />
         </HeadshotContainer>
-  
         <h2>I'm a web developer.</h2>
-     
       </TextContainer>
     </HomeContainer>
   );
@@ -72,19 +68,19 @@ const HomeContainer = styled.section`
 `;
 
 const TextContainer = styled.div`
-  margin-top: 30px;
+  margin-top: 50px;
 
   h1 {
     font-size: 3rem;
     font-weight: 400;
     color: ${({ theme }) => theme.colors.text};
-    margin: 0;
+    margin-bottom: 1rem;
 
     &.accent {
       font-size: 5rem; /* Twice as big as the previous 4.5rem */
       font-weight: 700;
       color: #f7931a; /* Bitcoin orange */
-      font-family: 'Playfair Display', serif; /* New font */
+      font-family: 'League Spartan', sans-serif; /* New font */
     }
 
     @media (max-width: 768px) {
@@ -117,7 +113,7 @@ const Headshot = styled.img`
   border-radius: 50%;
   object-fit: cover;
   border: 5px solid black; /* Black border */
-    box-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.5);
+  box-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.5);
   animation: ${bounce} 2.9s ease;
   animation-delay: 0.01s;
 
@@ -126,7 +122,5 @@ const Headshot = styled.img`
     height: 150px;
   }
 `;
-
-
 
 export default Home;
