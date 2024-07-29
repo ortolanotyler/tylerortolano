@@ -4,13 +4,13 @@ import Gallery from '../components/Gallery';
 import useIntersectionObserver from '../hooks/IntersectionObserver';
 
 const Skills = () => {
-  const [ref, isIntersecting] = useIntersectionObserver({ threshold: 0.2 });
+  const [ref, isIntersecting] = useIntersectionObserver({ threshold: 0.9 });
 
   return (
     <StyledSkills id="skills">
       <div className="container">
         <FadeInSection ref={ref} isIntersecting={isIntersecting}>
-          <h2>Skills</h2>
+          <h2>Toolkit</h2>
         </FadeInSection>
         <Gallery />
       </div>
@@ -37,14 +37,14 @@ const StyledSkills = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
-  padding-top: 100px; /* Add padding to account for the fixed navbar */
+  padding: 2.5rem;
+  padding-top: 10px; /* Add padding to account for the fixed navbar */
   background: ${({ theme }) => theme.colors.background};
   color: ${({ theme }) => theme.colors.text};
   min-height: 100vh;
 
   .container {
-    max-width: 600px;
+    max-width: 400px;
     width: 100%;
     text-align: center;
 

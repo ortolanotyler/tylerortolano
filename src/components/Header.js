@@ -219,7 +219,7 @@ const MobileMenu = styled.div`
   z-index: 999;
   animation: ${slideIn} 0.3s forwards;
   flex-direction: row; /* Change to row for horizontal alignment */
-  justify-content: space-around; /* Space out items evenly */
+  justify-content: center; /* Space out items evenly */
   align-items: center;
 
   button {

@@ -1,13 +1,13 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
   }
 
   body {
@@ -18,7 +18,8 @@ const GlobalStyles = createGlobalStyle`
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
   }
 
   #root {
@@ -46,8 +47,10 @@ const GlobalStyles = createGlobalStyle`
 
   button {
     cursor: pointer;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
   }
 `;
 
 export default GlobalStyles;
+

@@ -75,7 +75,7 @@ const TextContainer = styled.div`
   margin-top: 30px;
 
   h1 {
-    font-size: 2rem;
+    font-size: 3rem;
     font-weight: 400;
     color: ${({ theme }) => theme.colors.text};
     margin: 0;
@@ -117,7 +117,7 @@ const Headshot = styled.img`
   border-radius: 50%;
   object-fit: cover;
   border: 5px solid black; /* Black border */
-    box-shadow: 0.03rem 0.03rem 0.5rem rgba(0, 0, 0, 0.3);
+    box-shadow: 0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.5);
   animation: ${bounce} 2.9s ease;
   animation-delay: 0.01s;
 
