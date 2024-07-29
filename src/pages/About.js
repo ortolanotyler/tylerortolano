@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Gallery from '../components/Gallery';
 
 const About = () => (
   <StyledAbout id="about">
@@ -10,19 +11,7 @@ const About = () => (
       </p>
 
       <h2>Skills</h2>
-      <ul>
-        <li>JavaScript (ES6+)</li>
-        <li>React</li>
-        <li>HTML & CSS</li>
-        <li>Styled-Components</li>
-        <li>Git & GitHub</li>
-        <li>Responsive Design</li>
-      </ul>
-
-      <h2>Personal Details</h2>
-      <p>
-        When I'm not coding, I love to travel and explore new places. I also enjoy creating makeup tutorials and sharing my passion for beauty with my followers on YouTube and Instagram. Whether I'm working on a new project or trying out the latest makeup trend, I always aim to bring creativity and enthusiasm to everything I do.
-      </p>
+ <Gallery/>
     </div>
   </StyledAbout>
 );

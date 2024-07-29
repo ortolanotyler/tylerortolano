@@ -1,15 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import ProjectCard from '../components/ProjectCard';
+import Gallery from '../components/Gallery';
 
 const Projects = () => (
   <StyledProjects id="projects">
     <h2>My Projects</h2>
-    <div className="projects-grid">
-      <ProjectCard title="Project 1" description="Description of project 1" link="#" />
-      <ProjectCard title="Project 2" description="Description of project 2" link="#" />
-      {/* Add more ProjectCards as needed */}
-    </div>
+
   </StyledProjects>
 );
 
