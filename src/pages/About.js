@@ -11,13 +11,15 @@ const About = () => {
       <div className="container">
         <FadeInSection ref={ref} isIntersecting={isIntersecting}>
           <h1>About Me</h1>
-          <p>
-            I am a recent graduate of Springboard's Software Engineering course with a strong foundation in frontend and full stack development. Having relocated to Canada in early 2023 and obtained permanent residency, I am eager to begin a long-term career in the tech industry. I am proficient in React, JavaScript, HTML, and CSS, with hands-on experience in developing responsive web applications.
-          </p>
-          <SkylineContainer>
+        
+     
+        </FadeInSection>
+        <SkylineContainer>
             <Skyline />
           </SkylineContainer>
-        </FadeInSection>
+        <p>
+            I am a recent graduate of Springboard's Software Engineering course with a strong foundation in frontend and full stack development. Having relocated to Canada in early 2023 and obtained permanent residency, I am eager to begin a long-term career in the tech industry. I am proficient in React, JavaScript, HTML, and CSS, with hands-on experience in developing responsive web applications.
+          </p>
       </div>
     </StyledAbout>
   );
@@ -48,7 +50,7 @@ const StyledAbout = styled.section`
   min-height: 100vh;
 
   .container {
-    max-width: 500px;
+    max-width: 400px;
     width: 100%;
     text-align: center;
 
