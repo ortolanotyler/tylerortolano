@@ -92,7 +92,7 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   gap: .5rem;
-  max-width: 60rem;
+  max-width: 50rem;
   margin: 0 auto;
 
   @media (min-width: 640px) {
@@ -104,13 +104,17 @@ const Card = styled.div`
   background-color: white;
   padding: 2rem;
   position: relative;
-  border-radius: 10px;
+  border-radius: 2rem;
   overflow: hidden;
-  transition: box-shadow 0.6s;
-
+  transition: box-shadow 0.1s;
+  border: 0.1px solid #ddd;
 
   &:hover {
-    box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.3);
+    box-shadow: 0.03rem 0.03rem 0.5rem rgba(0, 0, 0, 0.3);
+  }
+
+  &:hover .circle {
+    filter: brightness(75%);
   }
 
   &::before {
@@ -160,11 +164,12 @@ const CardContent = styled.div`
   position: relative;
   z-index: 1;
   color: ${({ theme }) => theme.colors.text};
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25); /* Adding drop shadow to text */
 
   h2 {
     font-family: 'Playfair Display', serif;
     font-weight: 400;
-    margin-bottom: 1rem;
+    
     font-size: 1.5rem;
 
     @media (min-width: 1024px) {
@@ -191,30 +196,28 @@ const Circle = styled.div`
   width: 100%;
   height: 100%;
   z-index: 0;
+  background: ${({ image }) => `url(${image})`} no-repeat center/cover;
+  transition: filter 0.6s; /* Adding transition for the filter effect */
 
   &.circle1 {
-    background: ${({ image }) => `url(${image})`} no-repeat center/cover;
     bottom: 0;
     right: 0;
     clip-path: circle(calc(6.25rem + 7.5vw) at 100% 100%);
   }
 
   &.circle2 {
-    background: ${({ image }) => `url(${image})`} no-repeat center/cover;
     bottom: 0;
     left: 0;
     clip-path: circle(calc(6.25rem + 7.5vw) at 0% 100%);
   }
 
   &.circle3 {
-    background: ${({ image }) => `url(${image})`} no-repeat center/cover;
     top: 0;
     right: 0;
     clip-path: circle(calc(6.25rem + 7.5vw) at 100% 0%);
   }
 
   &.circle4 {
-    background: ${({ image }) => `url(${image})`} no-repeat center/cover;
     top: 0;
     left: 0;
     clip-path: circle(calc(6.25rem + 7.5vw) at 0% 0%);
