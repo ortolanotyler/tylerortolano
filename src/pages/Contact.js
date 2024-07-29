@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import ContactForm from '../components/ContactForm';
+import Gallery2 from '../components/Gallery2';
 
 const Contact = () => (
   <StyledContact id="contact">
     <ContactForm />
+    <Gallery2 />
   </StyledContact>
 );
 

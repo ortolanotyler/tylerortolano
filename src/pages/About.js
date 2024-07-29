@@ -6,9 +6,7 @@ const About = () => (
   <StyledAbout id="about">
     <div className="container">
       <h1>About Me</h1>
-      <p>
-        Hi, I'm Jackie Wyers, a passionate React developer with a love for creating beautiful and functional web applications. With a background in software engineering and a keen eye for design, I strive to build projects that not only work well but also look great.
-      </p>
+     
 
       <h2>Skills</h2>
  <Gallery/>

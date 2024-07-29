@@ -38,6 +38,7 @@ const Header = () => {
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -70,19 +71,10 @@ const Header = () => {
       <nav className={showNavItems ? 'show' : ''}>
         <button onClick={() => scrollToSection('home')}>Home</button>
         <button onClick={() => scrollToSection('about')}>About</button>
-        <button onClick={() => scrollToSection('about')}>Skills</button>
+        <button onClick={() => scrollToSection('skills')}>Skills</button>
         <button onClick={() => scrollToSection('projects')}>Projects</button>
         <button onClick={() => scrollToSection('contact')}>Contact</button>
       </nav>
-      {showNavItems && (
-        <DropdownMenu>
-          <button onClick={() => scrollToSection('home')}>Home</button>
-          <button onClick={() => scrollToSection('about')}>About</button>
-          <button onClick={() => scrollToSection('about')}>Skills</button>
-          <button onClick={() => scrollToSection('projects')}>Projects</button>
-          <button onClick={() => scrollToSection('contact')}>Contact</button>
-        </DropdownMenu>
-      )}
     </StyledHeader>
   );
 };
@@ -122,6 +114,7 @@ const StyledHeader = styled.header`
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
   .logo-container {
     margin-left: 1rem;
@@ -140,7 +133,6 @@ const StyledHeader = styled.header`
 
     &:active {
       transform: translateY(4px);
-    
     }
   }
 
@@ -172,41 +164,17 @@ const StyledHeader = styled.header`
     }
 
     @media (max-width: 768px) {
-      display: none; /* Hide nav items on smaller screens */
+      display: ${({ show }) => (show ? 'flex' : 'none')};
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+      background: ${({ theme }) => theme.colors.background};
+      position: absolute;
+      top: 100%;
+      left: 0;
+      padding: 1rem;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
-  }
-`;
-
-const DropdownMenu = styled.div`
-  display: none;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 1rem;
-  background: ${({ theme }) => theme.colors.background};
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-
-  button {
-    background: none;
-    border: none;
-    color: ${({ theme }) => theme.colors.text};
-    font-weight: bold;
-    font-size: 1.2rem;
-    cursor: pointer;
-    padding: 1rem 0;
-    text-align: left;
-    width: 100%;
-
-    &:hover {
-      color: ${({ theme }) => theme.colors.primary};
-    }
-  }
-
-  @media (max-width: 768px) {
-    display: flex;
   }
 `;
 
