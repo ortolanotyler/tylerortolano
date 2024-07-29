@@ -11,23 +11,23 @@ const fadeIn = keyframes`
 `;
 
 const SkylineContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 100%;
-  margin-top: 20px;
-  animation: ${fadeIn} 3s ease-in-out;
+  height: 100%;
+  z-index: 1;
+  animation: ${fadeIn} 5s ease-in-out;
 `;
 
 const SkylineImage = styled.img`
   width: 100%;
-  max-width: 600px;
   height: auto;
-  
 `;
 
 const Skyline = () => {
-  const skyline = `${process.env.PUBLIC_URL}/Images/skyline.jpg`; // Update the path to the AVIF file
+  const skyline = `${process.env.PUBLIC_URL}/Images/skyline2.png`;
 
   return (
     <SkylineContainer>

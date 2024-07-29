@@ -106,7 +106,7 @@ const fadeOut = keyframes`
 
 const StyledHeader = styled.header`
   background: ${({ theme }) => theme.colors.background};
-  padding: 1.5rem;
+  padding: 1rem;
   position: fixed;
   width: 100%;
   top: 0;
@@ -145,6 +145,7 @@ const StyledHeader = styled.header`
     margin-left: 1rem;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
+    flex-wrap: wrap;
 
     button {
       background: none;
@@ -153,6 +154,7 @@ const StyledHeader = styled.header`
       font-weight: bold;
       font-size: 1.2rem;
       cursor: pointer;
+      transition: font-size 0.3s;
 
       &:hover {
         color: ${({ theme }) => theme.colors.primary};
@@ -162,18 +164,21 @@ const StyledHeader = styled.header`
     &.show {
       opacity: 1;
     }
+  }
 
-    @media (max-width: 768px) {
-      display: ${({ show }) => (show ? 'flex' : 'none')};
-      flex-direction: column;
-      gap: 1rem;
-      width: 100%;
-      background: ${({ theme }) => theme.colors.background};
-      position: absolute;
-      top: 100%;
-      left: 0;
-      padding: 1rem;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  @media (max-width: 768px) {
+    nav {
+      button {
+        font-size: 0.8rem; /* Adjust the font size for smaller screens */
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    nav {
+      button {
+        font-size: 0.8rem; /* Further adjust the font size for very small screens */
+      }
     }
   }
 `;

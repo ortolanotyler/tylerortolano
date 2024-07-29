@@ -21,6 +21,7 @@ const App = () => (
     <GlobalStyles />
     <div className="app-container">
       <Header />
+    
       <main>
         <Home />
         <About />
@@ -33,4 +34,3 @@ const App = () => (
 );
 
 export default App;
-

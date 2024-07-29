@@ -1,46 +1,70 @@
 import React from 'react';
-import styled from 'styled-components';
-import Skyline from './Skyline';
+import styled, { keyframes } from 'styled-components';
 
-const HeadshotContainer = styled.div`
+const Home = () => {
+  const headshot = `${process.env.PUBLIC_URL}/Images/linkedin.jpeg`;
+  const skyline = `${process.env.PUBLIC_URL}/Images/skyline2.png`;
+
+  return (
+    <HomeContainer id="home">
+      <TextContainer>
+        <br />
+        <br />
+        <h1>Hello! My name is</h1>
+        <h1 className="accent">Tyler.</h1>
+      
+        <HeadshotContainer>
+          <Headshot src={headshot} alt="Headshot" />
+        </HeadshotContainer>
+        <br/>
+        <h2>I'm a full-stack developer.</h2>
+        <SkylineImage src={skyline} alt="Skyline" />
+      </TextContainer>
+    </HomeContainer>
+  );
+};
+
+const bounce = keyframes`
+  0% {
+    transform: translateY(0%);
+  }
+  20% {
+    transform: translateY(-180%) rotate(20deg);
+  }
+  30% {
+    transform: translateY(0%);
+  }
+  40% {
+    transform: translateY(-25%);
+  }
+  50% {
+    transform: translateY(0%);
+  }
+  60% {
+    transform: translateY(-12%);
+  }
+  70% {
+    transform: translateY(0%);
+  }
+  80% {
+    transform: translateY(-3%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+`;
+
+const HomeContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  padding-top: 100px;
+  padding-top: 120px; /* Add enough padding to ensure the content starts below the header */
   text-align: center;
+`;
 
-  .content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-
-    @media (max-width: 768px) {
-      flex-direction: column;
-    }
-  }
-
-  .text {
-    flex: 1;
-    text-align: left;
-
-    @media (max-width: 768px) {
-      text-align: center;
-    }
-  }
-
-  .image-container {
-    flex: 0 0 auto;
-
-    img {
-      height: 150px;
-      width: 150px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-  }
+const TextContainer = styled.div`
+  margin-top: 20px;
 
   h1 {
     font-size: 3rem;
@@ -66,43 +90,41 @@ const HeadshotContainer = styled.div`
   h2 {
     font-size: 2rem;
     font-weight: 400;
-    margin-top: 1rem;
+   
+  
     color: ${({ theme }) => theme.colors.secondary};
 
     @media (max-width: 768px) {
       font-size: 1.5rem;
     }
   }
+`;
 
-  p {
-    font-size: 1.2rem;
-    margin-top: 1rem;
-    color: ${({ theme }) => theme.colors.secondary};
+const HeadshotContainer = styled.div`
+  margin: 1.5rem;
+  
+`;
 
-    @media (max-width: 768px) {
-      font-size: 1rem;
-    }
+const Headshot = styled.img`
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid black; /* Black border */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Subtle box shadow */
+  animation: ${bounce} 1.9s ease;
+  animation-delay: 0.01s;
+
+  @media (max-width: 768px) {
+    width: 150px;
+    height: 150px;
   }
 `;
 
-const Home = () => {
-  const headshot = `${process.env.PUBLIC_URL}/Images/linkedin.jpeg`;
-
-  return (
-    <HeadshotContainer id="home">
-      <div className="content">
-        <div className="text">
-          <h1>Hello! My name is</h1>
-          <h1 className="accent">Tyler Ortolano.</h1>
-          <h2>I'm a full-stack developer.</h2>
-        </div>
-        <div className="image-container">
-          <img src={headshot} alt="Headshot" />
-        </div>
-      </div>
-      <Skyline />
-    </HeadshotContainer>
-  );
-};
+const SkylineImage = styled.img`
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+`;
 
 export default Home;
