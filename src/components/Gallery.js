@@ -52,7 +52,7 @@ const StyledGallery = styled.main`
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 1rem;
-  width: 80%;
+  width: 100%;
   max-width: 1000px;
   margin: 0 auto;
 
