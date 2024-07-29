@@ -65,9 +65,9 @@ const Header = () => {
     };
   }, [jiggleCount]);
 
-  const codepenLogo = `${process.env.PUBLIC_URL}/images/codepen.png`;
-  const githubLogo = `${process.env.PUBLIC_URL}/images/github.png`;
-  const linkedinLogo = `${process.env.PUBLIC_URL}/images/linkedin.png`;
+  const codepenLogo = `${process.env.PUBLIC_URL}/Images/codepen.png`;
+  const githubLogo = `${process.env.PUBLIC_URL}/Images/github.png`;
+  const linkedinLogo = `${process.env.PUBLIC_URL}/Images/linkedin.png`;
 
   return (
     <StyledHeader jiggle={jiggleCount > 0}>
