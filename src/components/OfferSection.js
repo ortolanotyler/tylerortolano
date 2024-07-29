@@ -9,29 +9,29 @@ const OfferSection = () => {
       <Grid>
         <Card>
           <Circle className="circle1" image={imagePath}></Circle>
-          <CardContent className="right">
+          <CardContent className="center">
             <h2>JackieWyers.Beauty</h2>
             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames.</p>
           </CardContent>
         </Card>
         <Card>
           <Circle className="circle2" image={imagePath}></Circle>
-          <CardContent className="left">
+          <CardContent className="center">
             <h2>Lister</h2>
             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames.</p>
           </CardContent>
         </Card>
         <Card>
           <Circle className="circle3" image={imagePath}></Circle>
-          <CardContent className="right">
+          <CardContent className="center">
             <h2>BitMap</h2>
             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames.</p>
           </CardContent>
         </Card>
         <Card>
           <Circle className="circle4" image={imagePath}></Circle>
-          <CardContent className="left">
-            <h2>project 4</h2>
+          <CardContent className="center">
+            <h2>Project 4</h2>
             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames.</p>
           </CardContent>
         </Card>
@@ -64,8 +64,8 @@ const OfferText = styled.div`
 
     .icon {
       margin-left: 0.75rem;
-      width: 1.5rem;
-      height: 1.5rem;
+      width: 2.5rem;
+      height: 2.5rem;
       color: ${({ theme }) => theme.colors.primary};
     }
   }
@@ -75,7 +75,7 @@ const OfferText = styled.div`
     font-size: 2rem;
     font-weight: 600;
     line-height: 1.25;
-    max-width: 50rem;
+    max-width: 40rem;
     margin: 0 auto;
 
     @media (min-width: 768px) {
@@ -91,7 +91,7 @@ const OfferText = styled.div`
 const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  gap: .5rem;
+  gap: 1rem;
   max-width: 50rem;
   margin: 0 auto;
 
@@ -102,12 +102,13 @@ const Grid = styled.div`
 
 const Card = styled.div`
   background-color: white;
-  padding: 3rem;
+  padding: 2rem;
   position: relative;
   border-radius: 2rem;
   overflow: hidden;
   transition: box-shadow 0.1s;
   border: 0.1px solid #ddd;
+  height: 300px; /* Fixed height for maintaining the box shape */
 
   &:hover {
     box-shadow: 0.03rem 0.03rem 0.5rem rgba(0, 0, 0, 0.3);
@@ -165,29 +166,36 @@ const CardContent = styled.div`
   z-index: 1;
   color: ${({ theme }) => theme.colors.text};
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25); /* Adding drop shadow to text */
+  overflow: hidden; /* Ensuring content stays within the box */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
 
   h2 {
     font-family: 'Playfair Display', serif;
     font-weight: 400;
-    
-    font-size: 1rem;
+    margin-bottom: 0.5rem; /* Reduce bottom margin */
+    font-size: 1.2rem; /* Adjust font size for smaller screens */
 
     @media (min-width: 1024px) {
-      font-size: 2rem;
+      font-size: 1.5rem; /* Adjust font size for larger screens */
     }
   }
 
   p {
     transition: color 0.5s;
     color: ${({ theme }) => theme.colors.secondary};
+    font-size: 0.9rem; /* Adjust font size for smaller screens */
+    margin: 0; /* Remove margin */
   }
 
   &.right {
-    padding-right: 5rem;
+    padding-right: 1rem; /* Adjust padding */
   }
 
   &.left {
-    padding-left: 5rem;
+    padding-left: 1rem; /* Adjust padding */
   }
 `;
 
