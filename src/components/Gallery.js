@@ -3,15 +3,15 @@ import styled from 'styled-components';
 
 const Gallery = () => {
   const logoPairs = [
-    [`${process.env.PUBLIC_URL}/images/react1.png`, `${process.env.PUBLIC_URL}/images/redux.png`],
-    [`${process.env.PUBLIC_URL}/images/nodejs.png`, `${process.env.PUBLIC_URL}/images/express.png`],
-    [`${process.env.PUBLIC_URL}/images/postgresql.png`, `${process.env.PUBLIC_URL}/images/sql2.png`],
-    [`${process.env.PUBLIC_URL}/images/html.png`, `${process.env.PUBLIC_URL}/images/jasmine.png`],
-    [`${process.env.PUBLIC_URL}/images/javascript.png`], // No partner, stays the same
-    [`${process.env.PUBLIC_URL}/images/css.png`, `${process.env.PUBLIC_URL}/images/bootstrap.png`],
-    [`${process.env.PUBLIC_URL}/images/jquery.png`, `${process.env.PUBLIC_URL}/images/docker.png`],
-    [`${process.env.PUBLIC_URL}/images/git.png`, `${process.env.PUBLIC_URL}/images/githublogo.png`],
-    [`${process.env.PUBLIC_URL}/images/api.jpg`, `${process.env.PUBLIC_URL}/images/sdlc.webp`],
+    [`${process.env.PUBLIC_URL}/images/react1.png`, `${process.env.PUBLIC_URL}/Images/redux.png`],
+    [`${process.env.PUBLIC_URL}/Images/nodejs.png`, `${process.env.PUBLIC_URL}/Images/express.png`],
+    [`${process.env.PUBLIC_URL}/Images/postgresql.png`, `${process.env.PUBLIC_URL}/Images/sql2.png`],
+    [`${process.env.PUBLIC_URL}/Images/html.png`, `${process.env.PUBLIC_URL}/Images/jasmine.png`],
+    [`${process.env.PUBLIC_URL}/Images/javascript.png`], // No partner, stays the same
+    [`${process.env.PUBLIC_URL}/Images/css.png`, `${process.env.PUBLIC_URL}/Images/bootstrap.png`],
+    [`${process.env.PUBLIC_URL}/Images/jquery.png`, `${process.env.PUBLIC_URL}/Images/docker.png`],
+    [`${process.env.PUBLIC_URL}/Images/git.png`, `${process.env.PUBLIC_URL}/Images/githublogo.png`],
+    [`${process.env.PUBLIC_URL}/Images/api.jpg`, `${process.env.PUBLIC_URL}/Images/sdlc.webp`],
   ];
 
   const [currentLogos, setCurrentLogos] = useState(logoPairs.map((pair) => pair[0]));
