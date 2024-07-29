@@ -10,6 +10,7 @@ import About from './pages/About';
 import Skills from './pages/Skills'; // Import the new Skills page
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
+import styled from 'styled-components';
 
 const App = () => (
   <ThemeProvider theme={theme}>
@@ -22,16 +23,41 @@ const App = () => (
     <GlobalStyles />
     <div className="app-container">
       <Header />
-      <main>
-        <Home />
-        <About />
-        <Skills /> {/* Include the new Skills page */}
-        <Projects />
-        <Contact />
-      </main>
+      <Main>
+        <Section>
+          <Home />
+        </Section>
+        <Section>
+          <About />
+        </Section>
+        <Section>
+          <Skills />
+        </Section>
+        <Section>
+          <Projects />
+        </Section>
+        <Section>
+          <Contact />
+        </Section>
+      </Main>
       <Footer />
     </div>
   </ThemeProvider>
 );
+
+const Main = styled.main`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const Section = styled.section`
+  width: 80%;
+  padding: 1px 0; /* Adjust the padding to control the space between sections */
+  
+  &:first-child {
+    padding-top: 100px; /* Adjust for fixed header */
+  }
+`;
 
 export default App;

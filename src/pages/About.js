@@ -4,23 +4,20 @@ import useIntersectionObserver from '../hooks/IntersectionObserver';
 import Skyline from './Skyline';
 
 const About = () => {
-  const [ref, isIntersecting] = useIntersectionObserver({ threshold: 0.2 });
+  const [ref, isIntersecting] = useIntersectionObserver({ threshold: 0.1 });
 
   return (
     <StyledAbout id="about">
       <div className="container">
         <FadeInSection ref={ref} isIntersecting={isIntersecting}>
-        <h1>About Me</h1>
-          <SquareText>
-            
-            <p>
-              I am a recent graduate of Springboard's Software Engineering course with a strong foundation in frontend and full stack development. Having relocated to Canada in early 2023 and obtained permanent residency, I am eager to begin a long-term career in the tech industry. I am proficient in React, JavaScript, HTML, and CSS, with hands-on experience in developing responsive web applications.
-            </p>
-          </SquareText>
+          <h1>About Me</h1>
+          <p>
+            I am a recent graduate of Springboard's Software Engineering course with a strong foundation in frontend and full stack development. Having relocated to Canada in early 2023 and obtained permanent residency, I am eager to begin a long-term career in the tech industry. I am proficient in React, JavaScript, HTML, and CSS, with hands-on experience in developing responsive web applications.
+          </p>
+          <SkylineContainer>
+            <Skyline />
+          </SkylineContainer>
         </FadeInSection>
-        <SkylineContainer>
-          <Skyline />
-        </SkylineContainer>
       </div>
     </StyledAbout>
   );
@@ -45,7 +42,6 @@ const StyledAbout = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
   padding-top: 100px; /* Add padding to account for the fixed navbar */
   background: ${({ theme }) => theme.colors.background};
   color: ${({ theme }) => theme.colors.text};
@@ -57,38 +53,20 @@ const StyledAbout = styled.section`
     text-align: center;
 
     h1 {
-      margin-bottom: 1rem;
+    font-size: 2rem;
+      margin-bottom: 1rem; /* Reduced space between h1 and p */
     }
 
     p {
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
       line-height: 1.6;
     }
   }
 `;
 
-const SquareText = styled.div`
-  width: 100%;
-  padding-top: 100%; /* Enforces a square aspect ratio */
-  position: relative;
-
-  h1, p {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    margin: 0;
-  }
-
-  p {
-    width: 90%; /* Adjust the width to fit the text within the square */
-  }
-`;
-
 const SkylineContainer = styled.div`
   width: 100%;
-  margin-top: 2rem; /* Add some margin to separate the text and the skyline */
+  margin-top: 1rem; /* Adjust the margin to control spacing between the text and the skyline */
 `;
 
 export default About;

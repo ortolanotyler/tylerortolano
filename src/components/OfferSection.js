@@ -72,10 +72,10 @@ const OfferText = styled.div`
 
   h1 {
     color: ${({ theme }) => theme.colors.primary};
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 600;
     line-height: 1.25;
-    max-width: 40rem;
+    max-width: 50rem;
     margin: 0 auto;
 
     @media (min-width: 768px) {
@@ -102,7 +102,7 @@ const Grid = styled.div`
 
 const Card = styled.div`
   background-color: white;
-  padding: 2rem;
+  padding: 3rem;
   position: relative;
   border-radius: 2rem;
   overflow: hidden;
@@ -170,7 +170,7 @@ const CardContent = styled.div`
     font-family: 'Playfair Display', serif;
     font-weight: 400;
     
-    font-size: 1.5rem;
+    font-size: 1rem;
 
     @media (min-width: 1024px) {
       font-size: 2rem;

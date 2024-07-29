@@ -24,9 +24,9 @@ const Home = () => {
         <HeadshotContainer>
           <Headshot src={headshot} alt="Headshot" />
         </HeadshotContainer>
-        <br />
-        <h2>I'm a full-stack developer.</h2>
-        <br />
+  
+        <h2>I'm a web developer.</h2>
+     
       </TextContainer>
     </HomeContainer>
   );
@@ -75,13 +75,14 @@ const TextContainer = styled.div`
   margin-top: 30px;
 
   h1 {
-    font-size: 2.5rem;
+        font-size: 2rem;
+
     font-weight: 400;
     color: ${({ theme }) => theme.colors.text};
     margin: 0;
 
     &.accent {
-      font-size: 9rem; /* Twice as big as the previous 4.5rem */
+      font-size: 5rem; /* Twice as big as the previous 4.5rem */
       font-weight: 700;
       color: #f7931a; /* Bitcoin orange */
       font-family: 'Playfair Display', serif; /* New font */
@@ -127,10 +128,6 @@ const Headshot = styled.img`
   }
 `;
 
-const SkylineImage = styled.img`
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-`;
+
 
 export default Home;

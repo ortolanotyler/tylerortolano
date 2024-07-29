@@ -20,6 +20,8 @@ const StyledContact = styled.section`
   min-height: 100vh;
 
   h2 {
+      font-size: 2rem;
+
     text-align: center;
     margin-bottom: 2rem;
     color: ${({ theme }) => theme.colors.primary};
