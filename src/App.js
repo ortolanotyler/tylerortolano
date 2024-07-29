@@ -52,7 +52,7 @@ const Main = styled.main`
 `;
 
 const Section = styled.section`
-  width: 80%;
+  width: 100%;
   padding: 1px 0; /* Adjust the padding to control the space between sections */
   
   &:first-child {

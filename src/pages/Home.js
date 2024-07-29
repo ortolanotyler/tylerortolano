@@ -67,7 +67,7 @@ const HomeContainer = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 150px; /* Add enough padding to ensure the content starts below the header */
+  padding-top: 100px; /* Add enough padding to ensure the content starts below the header */
   text-align: center;
 `;
 
