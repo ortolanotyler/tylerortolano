@@ -3,10 +3,10 @@ import styled from 'styled-components';
 
 const Gallery2 = () => {
   const logoLinks = [
-    { src: `${process.env.PUBLIC_URL}/images/codepen.png`, href: "https://codepen.io/Tyler-Ortolano-the-solid" },
-    { src: `${process.env.PUBLIC_URL}/images/github.png`, href: "https://github.com/ortolanotyler" },
-    { src: `${process.env.PUBLIC_URL}/images/linkedin.png`, href: "https://www.linkedin.com/in/tylerortolano/" },
-    { src: `${process.env.PUBLIC_URL}/images/fiverr.jpg`, href: "https://www.fiverr.com" },
+    { src: `${process.env.PUBLIC_URL}/Images/codepen.png`, href: "https://codepen.io/Tyler-Ortolano-the-solid" },
+    { src: `${process.env.PUBLIC_URL}/Images/github.png`, href: "https://github.com/ortolanotyler" },
+    { src: `${process.env.PUBLIC_URL}/Images/linkedin.png`, href: "https://www.linkedin.com/in/tylerortolano/" },
+    { src: `${process.env.PUBLIC_URL}/Images/fiverr.jpg`, href: "https://www.fiverr.com" },
   ];
 
   return (
