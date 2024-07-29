@@ -104,12 +104,12 @@ const jiggle = keyframes`
   75% { transform: rotate(3deg); }
 `;
 
-const slideIn = keyframes`
+const fadeIn = keyframes`
   from {
-    transform: translateX(-100%);
+    opacity: 0;
   }
   to {
-    transform: translateX(0);
+    opacity: 1;
   }
 `;
 
@@ -217,7 +217,7 @@ const MobileMenu = styled.div`
   background: ${({ theme }) => theme.colors.background};
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 999;
-  animation: ${slideIn} 0.3s forwards;
+  animation: ${fadeIn} 0.3s forwards;
   flex-direction: row; /* Change to row for horizontal alignment */
   justify-content: center; /* Space out items evenly */
   align-items: center;
@@ -246,4 +246,3 @@ const MobileMenu = styled.div`
 `;
 
 export default Header;
-
