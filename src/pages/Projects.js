@@ -1,8 +1,6 @@
-// pages/Projects.js
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import useIntersectionObserver from '../hooks/IntersectionObserver';
-import OfferSection from '../components/OfferSection';
 
 const Projects = () => {
   const [ref, isIntersecting] = useIntersectionObserver({ threshold: 0.1 });
@@ -12,7 +10,7 @@ const Projects = () => {
       <FadeInSection ref={ref} isIntersecting={isIntersecting}>
         <h2>My Projects</h2>
       </FadeInSection>
-      <OfferSection/>
+      {/* Additional project content can be added here */}
     </StyledProjects>
   );
 };
@@ -39,8 +37,7 @@ const StyledProjects = styled.section`
   min-height: 100vh;
 
   h2 {
-      font-size: 2rem;
-
+    font-size: 2rem;
     text-align: center;
     color: ${({ theme }) => theme.colors.primary};
   }
