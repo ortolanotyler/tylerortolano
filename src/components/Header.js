@@ -74,7 +74,7 @@ const Header = () => {
       <div className="logo-container" onClick={handleLogoClick}>
         <img src={logo} alt="Logo" />
       </div>
-  
+
       <div className="logos">
         <a href="https://codepen.io/Tyler-Ortolano-the-solid" target="_blank" rel="noopener noreferrer">
           <img src={codepenLogo} alt="CodePen" />
@@ -102,15 +102,6 @@ const jiggle = keyframes`
   25% { transform: rotate(3deg); }
   50% { transform: rotate(-3deg); }
   75% { transform: rotate(3deg); }
-`;
-
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 `;
 
 const StyledHeader = styled.header`
@@ -154,7 +145,6 @@ const StyledHeader = styled.header`
     justify-content: flex-start;
     align-items: center;
     flex-grow: 1;
-   
     margin-left: 1rem;
     opacity: 0;
     transition: opacity 0.9s ease-in-out;
@@ -217,7 +207,6 @@ const MobileMenu = styled.div`
   background: ${({ theme }) => theme.colors.background};
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   z-index: 999;
-  animation: ${fadeIn} 0.3s forwards;
   flex-direction: row; /* Change to row for horizontal alignment */
   justify-content: center; /* Space out items evenly */
   align-items: center;

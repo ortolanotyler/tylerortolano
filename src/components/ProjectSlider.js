@@ -89,9 +89,8 @@ const HeadshotContainer = styled('div')`
 `;
 
 const Headshot = styled('img')(({ theme }) => ({
-  width: '300px',
-  height: '300px',
-  borderRadius: '50%',
+  width: '275px',
+  height: '275px',
   objectFit: 'cover',
   border: '5px solid black',
   boxShadow: '0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.5)',
@@ -105,6 +104,8 @@ const Headshot = styled('img')(({ theme }) => ({
 const StyledButton = styled(Button)(({ theme }) => ({
   borderRadius: '50px',
   marginTop: '1rem',
+  border: '2.5px solid black',
+boxShadow: '0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.5)'
 }));
 
 export default ProjectSlider;

@@ -9,7 +9,7 @@ const Projects = () => {
   return (
     <StyledProjects id="projects">
       <FadeInSection ref={ref} isIntersecting={isIntersecting}>
-        <h2>My Projects</h2>
+        <h2>Portfolio</h2>
       </FadeInSection>
       {/* Additional project content can be added here */}
       <ProjectSlider/>
@@ -39,7 +39,7 @@ const StyledProjects = styled.section`
   min-height: 100vh;
 
   h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-align: center;
     color: ${({ theme }) => theme.colors.primary};
   }
