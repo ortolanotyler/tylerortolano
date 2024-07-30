@@ -1,3 +1,4 @@
+// src/components/Gallery.js
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
@@ -67,12 +68,19 @@ const Gallery = () => {
 
 const StyledGallery = styled.main`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: 1fr; /* Single column layout for all screen sizes */
   gap: 1rem;
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for wider screens */
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr); /* Three columns for wider screens */
+  }
 
   .item {
     display: flex;
