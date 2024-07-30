@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import useIntersectionObserver from '../hooks/IntersectionObserver';
 import Skyline from './Skyline';
 
@@ -11,32 +11,20 @@ const About = () => {
       <div className="container">
         <FadeInSection ref={ref} isIntersecting={isIntersecting}>
           <h1>About Me</h1>
-        
-     
         </FadeInSection>
         <SkylineContainer>
-            <Skyline />
-          </SkylineContainer>
+          <Skyline />
+        </SkylineContainer>
         <p>
-            I am a recent graduate of Springboard's Software Engineering course with a strong foundation in frontend and full stack development. Having relocated to Canada in early 2023 and obtained permanent residency, I am eager to begin a long-term career in the tech industry. I am proficient in React, JavaScript, HTML, and CSS, with hands-on experience in developing responsive web applications.
-          </p>
+          I am a recent graduate of Springboard's Software Engineering course with a strong foundation in frontend and full stack development. Having relocated to Canada in early 2023 and obtained permanent residency, I am eager to begin a long-term career in the tech industry. I am proficient in React, JavaScript, HTML, and CSS, with hands-on experience in developing responsive web applications.
+        </p>
       </div>
     </StyledAbout>
   );
 };
 
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-`;
-
 const FadeInSection = styled.div`
-  opacity: ${({ isIntersecting }) => (isIntersecting ? 1 : 0)};
-  animation: ${({ isIntersecting }) => isIntersecting && fadeIn} 1s forwards;
+  opacity: 1; /* Set opacity to 1 by default */
 `;
 
 const StyledAbout = styled.section`
@@ -55,7 +43,7 @@ const StyledAbout = styled.section`
     text-align: center;
 
     h1 {
-    font-size: 2rem;
+      font-size: 2rem;
       margin-bottom: 1rem; /* Reduced space between h1 and p */
     }
 

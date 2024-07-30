@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import Gallery from '../components/Gallery';
 import useIntersectionObserver from '../hooks/IntersectionObserver';
 
@@ -18,18 +18,8 @@ const Skills = () => {
   );
 };
 
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-`;
-
 const FadeInSection = styled.div`
-  opacity: ${({ isIntersecting }) => (isIntersecting ? 1 : 0)};
-  animation: ${({ isIntersecting }) => isIntersecting && fadeIn} 1s forwards;
+  opacity: 1; /* Set opacity to 1 by default */
 `;
 
 const StyledSkills = styled.section`
@@ -49,8 +39,7 @@ const StyledSkills = styled.section`
     text-align: center;
 
     h2 {
-        font-size: 2rem;
-
+      font-size: 2rem;
       margin-bottom: 2rem;
     }
   }
