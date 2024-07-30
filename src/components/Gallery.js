@@ -15,24 +15,42 @@ const Gallery = () => {
   ];
 
   const [currentLogos, setCurrentLogos] = useState(logoPairs.map((pair) => pair[0]));
+  const [isTransitioning, setIsTransitioning] = useState(new Array(logoPairs.length).fill(false));
 
   useEffect(() => {
-    const intervals = logoPairs.map((_, index) => {
-      return setInterval(() => {
+    const interval = setInterval(() => {
+      let randomIndex;
+      do {
+        randomIndex = Math.floor(Math.random() * logoPairs.length);
+      } while (randomIndex === 4); // Ensure the center JavaScript logo is not selected
+
+      setIsTransitioning((prev) => {
+        const newTransitions = [...prev];
+        newTransitions[randomIndex] = true;
+        return newTransitions;
+      });
+
+      setTimeout(() => {
         setCurrentLogos((prevLogos) => {
           const newLogos = [...prevLogos];
-          if (logoPairs[index].length > 1) {
-            const currentLogoIndex = logoPairs[index].indexOf(newLogos[index]);
-            const nextLogoIndex = (currentLogoIndex + 1) % logoPairs[index].length;
-            newLogos[index] = logoPairs[index][nextLogoIndex];
+          if (logoPairs[randomIndex].length > 1) {
+            const currentLogoIndex = logoPairs[randomIndex].indexOf(newLogos[randomIndex]);
+            const nextLogoIndex = (currentLogoIndex + 1) % logoPairs[randomIndex].length;
+            newLogos[randomIndex] = logoPairs[randomIndex][nextLogoIndex];
           }
           return newLogos;
         });
-      }, 2000 * (index + 1));
-    });
+
+        setIsTransitioning((prev) => {
+          const newTransitions = [...prev];
+          newTransitions[randomIndex] = false;
+          return newTransitions;
+        });
+      }, 500); // Match this with the transition duration
+    }, 2000);
 
     return () => {
-      intervals.forEach((interval) => clearInterval(interval));
+      clearInterval(interval);
     };
   }, []);
 
@@ -40,7 +58,7 @@ const Gallery = () => {
     <StyledGallery>
       {currentLogos.map((logo, index) => (
         <div key={index} className="item">
-          <img src={logo} alt={`Logo ${index}`} />
+          <img src={logo} alt={`Logo ${index}`} className={isTransitioning[index] ? 'transition' : ''} />
         </div>
       ))}
     </StyledGallery>
@@ -64,7 +82,6 @@ const StyledGallery = styled.main`
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
-    transition: transform 0.3s;
     aspect-ratio: 1 / 1; /* Maintain square aspect ratio */
     box-shadow: 0.03rem 0.03rem 0.5rem rgba(0, 0, 0, 0.3);
     
@@ -76,9 +93,13 @@ const StyledGallery = styled.main`
       max-width: 80%; /* Adjust the logos to fit within the square */
       max-height: 80%;
       object-fit: contain; /* Ensure logos maintain their aspect ratios */
+      transition: opacity 0.5s ease-in-out; /* Only the logo fades in and out */
+      
+      &.transition {
+        opacity: 0;
+      }
     }
   }
 `;
 
 export default Gallery;
-

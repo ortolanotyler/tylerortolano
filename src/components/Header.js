@@ -157,7 +157,7 @@ const StyledHeader = styled.header`
    
     margin-left: 1rem;
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.9s ease-in-out;
     flex-wrap: wrap;
 
     button {

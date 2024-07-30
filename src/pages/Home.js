@@ -33,7 +33,7 @@ const bounce = keyframes`
     transform: translateY(0%);
   }
   20% {
-    transform: translateY(-200%) rotate(20deg);
+    transform: translateY(-50%) rotate(10deg);
   }
   30% {
     transform: translateY(0%);
@@ -45,7 +45,7 @@ const bounce = keyframes`
     transform: translateY(0%);
   }
   60% {
-    transform: translateY(-2%);
+    transform: translateY(-5%);
   }
   70% {
     transform: translateY(0%);

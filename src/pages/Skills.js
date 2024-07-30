@@ -4,7 +4,7 @@ import Gallery from '../components/Gallery';
 import useIntersectionObserver from '../hooks/IntersectionObserver';
 
 const Skills = () => {
-  const [ref, isIntersecting] = useIntersectionObserver({ threshold: 0.9 });
+  const [ref, isIntersecting] = useIntersectionObserver({ threshold: 0.5 });
 
   return (
     <StyledSkills id="skills">
