@@ -21,7 +21,8 @@ const Header = () => {
 
   const handleLogoClick = () => {
     clickSound.play();
-    setShowNavItems(!showNavItems); // Toggle the nav items visibility on logo click
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to the top of the page
+    setShowNavItems(false); // Hide nav items after clicking the logo
   };
 
   const handleScroll = () => {
@@ -86,13 +87,6 @@ const Header = () => {
           <img src={linkedinLogo} alt="LinkedIn" />
         </a>
       </div>
-      <MobileMenu show={showNavItems}>
-        <button onClick={() => scrollToSection('home')}>Home</button>
-        <button onClick={() => scrollToSection('about')}>About</button>
-        <button onClick={() => scrollToSection('skills')}>Skills</button>
-        <button onClick={() => scrollToSection('projects')}>Projects</button>
-        <button onClick={() => scrollToSection('contact')}>Contact</button>
-      </MobileMenu>
     </StyledHeader>
   );
 };
@@ -192,46 +186,8 @@ const StyledHeader = styled.header`
   }
 
   @media (max-width: 480px) {
-    nav {
-      display: none;
-    }
+    display: none; /* Hide the entire header on mobile */
   }
-`;
-
-const MobileMenu = styled.div`
-  display: none;
-  position: fixed;
-  top: 120px; /* Adjust according to the header height */
-  left: 0;
-  width: 100%;
-  background: ${({ theme }) => theme.colors.background};
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 999;
-  flex-direction: row; /* Change to row for horizontal alignment */
-  justify-content: center; /* Space out items evenly */
-  align-items: center;
-
-  button {
-    padding: 1rem;
-    background: none;
-    border: none;
-    color: ${({ theme }) => theme.colors.text};
-    font-weight: bold;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.3s;
-
-    &:hover {
-      background: ${({ theme }) => theme.colors.primary};
-      color: white;
-    }
-  }
-
-  ${({ show }) =>
-    show &&
-    `
-    display: flex;
-  `}
 `;
 
 export default Header;
