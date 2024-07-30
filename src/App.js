@@ -1,4 +1,3 @@
-// src/App.js
 import React from 'react';
 import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles';
 import { ThemeProvider as StyledThemeProvider } from 'styled-components';
@@ -11,6 +10,7 @@ import About from './pages/About';
 import Skills from './pages/Skills';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
+import Games from './pages/Games';
 
 const App = () => (
   <MuiThemeProvider theme={theme.muiTheme}>
@@ -23,6 +23,7 @@ const App = () => (
           <About />
           <Skills />
           <Projects />
+          <Games /> {/* Include the new Games page */}
           <Contact />
         </main>
         <Footer />
@@ -32,4 +33,3 @@ const App = () => (
 );
 
 export default App;
-

@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import useIntersectionObserver from '../hooks/IntersectionObserver';
 import ProjectSlider from '../components/ProjectSlider';
+import ConnectFour from '../components/ConnectFour';
 
 const Projects = () => {
   const [ref, isIntersecting] = useIntersectionObserver({ threshold: 0.1 });
@@ -13,6 +14,7 @@ const Projects = () => {
       </FadeInSection>
       {/* Additional project content can be added here */}
       <ProjectSlider/>
+  
     </StyledProjects>
   );
 };

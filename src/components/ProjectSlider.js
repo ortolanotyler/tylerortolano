@@ -11,13 +11,16 @@ import theme from '../styles/theme';
 const projects = [
   {
     title: 'JackieWyers.beauty',
-    description: "For my very first project, I developed JackieWyers.beauty using ReactJS, ensuring the site could grow with the client's evolving needs, including the incorporation of various mini-applications. I used PostgreSQL for secure data management and Styled Components for scalable design. To optimize SEO, I integrated React-Helmet. This project provided valuable experience in translating client requirements into technical implementations and iterating based on user feedback.",
+    description:
+      "For my very first project, I developed JackieWyers.beauty using ReactJS, ensuring the site could grow with the client's evolving needs, including the incorporation of various mini-applications. I used PostgreSQL for secure data management and Styled Components for scalable design. To optimize SEO, I integrated React-Helmet. This project provided valuable experience in translating client requirements into technical implementations and iterating based on user feedback.",
     image: `${process.env.PUBLIC_URL}/Images/jackiewyersbeauty.png`,
+    href: 'https://jackiewyers.beauty/',
   },
   {
     title: 'Project 2',
     description: 'Description for project 2',
     image: `${process.env.PUBLIC_URL}/Images/project2.png`,
+    href: 'https://nextsite.com/',
   },
   // Add more projects as needed
 ];
@@ -34,7 +37,14 @@ const ProjectSlider = () => {
                 <Headshot src={project.image} alt={project.title} />
               </HeadshotContainer>
               <Description>{project.description}</Description>
-              <StyledButton variant="contained" color="primary">
+              <StyledButton
+
+                variant="contained"
+                color="primary"
+                href={project.href}
+                target="_blank"
+                rel="noreferrer"
+              >
                 Visit
               </StyledButton>
             </CardContentWrapper>
@@ -92,12 +102,12 @@ const Headshot = styled('img')(({ theme }) => ({
   width: '275px',
   height: '275px',
   objectFit: 'cover',
-  border: '5px solid black',
-  boxShadow: '0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.5)',
+  border: '4px solid black',
+  boxShadow: '0.1rem 0.2rem 0.4rem rgba(0, 0, 0, 0.5)',
   marginBottom: '1rem',
   '@media (max-width: 768px)': {
-    width: '300px',
-    height: '300px',
+    width: '200px',
+    height: '200px',
   },
 }));
 
@@ -105,7 +115,7 @@ const StyledButton = styled(Button)(({ theme }) => ({
   borderRadius: '50px',
   marginTop: '1rem',
   border: '2.5px solid black',
-boxShadow: '0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.5)'
+  boxShadow: '0.1rem 0.1rem 1rem rgba(0, 0, 0, 0.5)',
 }));
 
 export default ProjectSlider;

@@ -14,7 +14,6 @@ const Contact = () => (
 
 const StyledContact = styled.section`
   padding: 2rem;
-  padding-top: 100px; /* Add padding to account for the fixed navbar */
   background: ${({ theme }) => theme.colors.background};
   color: ${({ theme }) => theme.colors.text};
   min-height: 100vh;
@@ -23,7 +22,7 @@ const StyledContact = styled.section`
       font-size: 2rem;
 
     text-align: center;
-    margin-bottom: 2rem;
+    
     color: ${({ theme }) => theme.colors.primary};
   }
 `;
