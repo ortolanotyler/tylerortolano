@@ -65,7 +65,7 @@ const StyledCard = styled(Card)(({ theme }) => ({
 
 const Title = styled(Typography)(({ theme }) => ({
   fontSize: '1.5rem',
-  fontWeight: 'bold',
+  fontWeight: 'normal',
   color: theme.palette.text.primary,
   marginBottom: '1rem',
   textAlign: 'center',
