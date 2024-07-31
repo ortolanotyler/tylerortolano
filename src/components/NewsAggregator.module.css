@@ -1,16 +1,16 @@
 /* src/components/NewsAggregator.module.css */
 .container {
-    text-align: center;
+    text-align: left;
     min-height: 100vh;
     padding: 20px;
-    background-color: #f0f0f0;
+    background-color: white;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
   .title {
-    font-size: 24px;
-    color: #333;
+    font-size: 2rem;
+    text-align : center;
+    color: #87CEEB;
     margin-bottom: 20px;
   }
   
@@ -27,14 +27,15 @@
   .newsItem {
     margin-bottom: 15px;
     padding: 10px;
-    background-color: #ffffff;
-    border: 1px solid #ddd;
+    background-color: white;
+    border: 1px solid white;
     border-radius: 4px;
+    box-shadow: inset;
   }
   
   .link {
-    font-size: 18px;
-    color: #007bff;
+    font-size: 20px;
+    color: #6BAED8;
     text-decoration: none;
   }
   
@@ -44,6 +45,6 @@
   
   .source {
     font-size: 14px;
-    color: #555;
+    color: #87CEEB;
   }
   

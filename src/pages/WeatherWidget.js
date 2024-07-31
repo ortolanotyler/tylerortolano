@@ -117,7 +117,7 @@ const WeatherForecast = () => {
 
   return (
     <div className={styles.container}>
-                    <h2>How's the weather tomorrow?</h2>
+                    <h2>Tomorrow's Weather</h2>
 
       <button onClick={handleLocationRequest} className={styles['icon-button']}>
         {renderWeatherIcon(locationRequested ? condition : null)}

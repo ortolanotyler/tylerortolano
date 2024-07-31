@@ -1,0 +1,15 @@
+.projectGrid {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column layout */
+  gap: 20px; /* Space between cards */
+  justify-items: center; /* Center the cards horizontally */
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .projectGrid {
+      padding: 10px;
+  }
+}

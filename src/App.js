@@ -13,6 +13,7 @@ import Contact from './pages/Contact';
 import Games from './pages/Games';
 import WeatherWidget from './pages/WeatherWidget';
 import Widgets from './pages/Widgets';
+import ProjectSlider2 from './components/ProjectsSlider';
 
 const App = () => (
   <MuiThemeProvider theme={theme.muiTheme}>
