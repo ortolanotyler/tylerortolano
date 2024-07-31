@@ -80,15 +80,8 @@ const ConnectFour = () => {
 
   return (
     <div className={styles.ConnectFour}>
-      <h1>Connect Four</h1>
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={initializeBoard}
-        className={styles.restartButton}
-      >
-        NEW GAME
-      </Button>
+      
+    
       <table className={styles.board}>
         <thead>
           <tr className={styles.columnTop}>
@@ -109,6 +102,14 @@ const ConnectFour = () => {
           ))}
         </tbody>
       </table>
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={initializeBoard}
+        className={styles.restartButton}
+      >
+        Clear Board
+      </Button>
     </div>
   );
 };

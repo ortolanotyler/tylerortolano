@@ -28,9 +28,8 @@ const GameContainer = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 800px;
-  margin-top: 2rem;
-  padding: 1rem;
+  max-width: 1000px;
+ 
   background: ${({ theme }) => theme.colors.background};
   
 `;

@@ -1,9 +1,8 @@
 .container {
     text-align: center;
-    padding: 50px;
     background-color: white; /* Sky blue background */
     border-radius: 5px;
-    max-width: 500px;
+    max-width: 1000px;
     margin: 0 auto;
     border: 2.5px solid white;
     
@@ -28,8 +27,8 @@
   }
   
   .blink {
-    animation: blink-animation 0.2s steps(5, start) infinite;
-    -webkit-animation: blink-animation 1s steps(5, start) infinite;
+    animation: blink-animation 0.2s steps(10, start) infinite;
+    -webkit-animation: blink-animation 1s steps(10, start) infinite;
   }
   
   @keyframes blink-animation {
@@ -46,12 +45,12 @@
   
   .result {
     margin-top: 10px;
-    font-size: 1rem;
+    font-size: 2rem;
     color: #87CEEB;
   }
 
   h2 {
-    font-size: 1rem;
+    font-size: 2rem;
     color: #87CEEB;
     margin-bottom: 15px;
   }

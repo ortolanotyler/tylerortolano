@@ -6,8 +6,9 @@ const baseTheme = {
     background: 'white',
     text: '#000000',
     primary: '#333333',
-    secondary: '#666666',
-    bitcoinOrange: '#f7931a'
+    secondary: '#white',
+    bitcoinOrange: '#87CEEB',
+
   }
 };
 

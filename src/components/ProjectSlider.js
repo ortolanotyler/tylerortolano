@@ -16,12 +16,7 @@ const projects = [
     image: `${process.env.PUBLIC_URL}/Images/jackiewyersbeauty.png`,
     href: 'https://jackiewyers.beauty/',
   },
-  {
-    title: 'Project 2',
-    description: 'Description for project 2',
-    image: `${process.env.PUBLIC_URL}/Images/project2.png`,
-    href: 'https://nextsite.com/',
-  },
+
   // Add more projects as needed
 ];
 
@@ -60,7 +55,7 @@ const SliderContainer = styled('div')(({ theme }) => ({
   flexDirection: 'column',
   alignItems: 'center',
   gap: '20px',
-  padding: '20px',
+  
 }));
 
 const StyledCard = styled(Card)(({ theme }) => ({

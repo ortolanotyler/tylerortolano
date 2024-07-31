@@ -5,9 +5,10 @@
   
   .restartButton {
     margin-top: 20px;
+
     font-family: 'Open Sans', serif;
-    padding: 5px 10px;
-    font-size: 12px;
+    padding: 10px;
+    font-size: 10px;
     cursor: pointer;
   }
   .restartButton:hover {

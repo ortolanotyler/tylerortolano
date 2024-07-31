@@ -9,9 +9,7 @@ const Projects = () => {
 
   return (
     <StyledProjects id="projects">
-      <FadeInSection ref={ref} isIntersecting={isIntersecting}>
-        <h2>Portfolio</h2>
-      </FadeInSection>
+     
       {/* Additional project content can be added here */}
       <ProjectSlider/>
   
