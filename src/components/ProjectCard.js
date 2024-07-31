@@ -24,10 +24,11 @@ const ProjectCard = ({ image, header, content }) => {
     setMouseY(0);
   };
 
-  const rX = (mouseX / width) * 30;
-  const rY = (mouseY / height) * -30;
-  const tX = (mouseX / width) * -40;
-  const tY = (mouseY / height) * -40;
+  const rX = (mouseX / width) * 10; // Reduce the rotation angle
+  const rY = (mouseY / height) * -10;
+  const tX = (mouseX / width) * -10; // Adjust translation accordingly
+  const tY = (mouseY / height) * -10;
+  
 
   return (
     <div 
