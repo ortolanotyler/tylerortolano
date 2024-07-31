@@ -2,6 +2,7 @@ import React from 'react';
 import ConnectFour from '../components/ConnectFour';
 import styled from 'styled-components';
 import WeatherForecast from './WeatherWidget';
+import NewsAggregator from '../components/NewsAggregator';
 
 const Widgets = () => {
   return (
@@ -10,6 +11,7 @@ const Widgets = () => {
       <GameContainer>
         <WeatherForecast />
       </GameContainer>
+      <NewsAggregator  />
     </StyledGames>
   );
 };

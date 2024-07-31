@@ -2,50 +2,11 @@ import React, { useState, useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 
 const Header = () => {
-  const [showNavItems, setShowNavItems] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
   const [jiggleCount, setJiggleCount] = useState(0);
 
-  const scrollToSection = (sectionId) => {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      const yOffset = -80; // Adjust this value to match the height of your navbar
-      const yPosition = section.getBoundingClientRect().top + window.pageYOffset + yOffset;
-      window.scrollTo({ top: yPosition, behavior: 'smooth' });
-      setShowNavItems(false); // Hide nav items after navigation
-    }
-  };
-
-  const logo = `${process.env.PUBLIC_URL}/Images/logo.png`; // Adjust the path as needed
-  const clickSound = new Audio(`${process.env.PUBLIC_URL}/click.wav`); // Adjust the path as needed
-
   const handleLogoClick = () => {
-    clickSound.play();
-    window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to the top of the page
-    setShowNavItems(false); // Hide nav items after clicking the logo
+    window.location.href = '/'; // Redirect to the home page (refresh)
   };
-
-  const handleScroll = () => {
-    const currentScrollY = window.scrollY;
-
-    if (currentScrollY < lastScrollY) {
-      // Scrolling up
-      setShowNavItems(true);
-    } else {
-      // Scrolling down
-      setShowNavItems(false);
-    }
-
-    setLastScrollY(currentScrollY);
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [lastScrollY]);
 
   useEffect(() => {
     const jiggleInterval = setInterval(() => {
@@ -66,6 +27,7 @@ const Header = () => {
     };
   }, [jiggleCount]);
 
+  const logo = `${process.env.PUBLIC_URL}/Images/logo.png`; // Adjust the path as needed
   const codepenLogo = `${process.env.PUBLIC_URL}/Images/codepen.png`;
   const githubLogo = `${process.env.PUBLIC_URL}/Images/github.png`;
   const linkedinLogo = `${process.env.PUBLIC_URL}/Images/linkedin.png`;
@@ -134,35 +96,6 @@ const StyledHeader = styled.header`
     }
   }
 
-  nav {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-grow: 1;
-    margin-left: 1rem;
-    opacity: 0;
-    transition: opacity 0.9s ease-in-out;
-    flex-wrap: wrap;
-
-    button {
-      background: none;
-      border: none;
-      color: ${({ theme }) => theme.colors.text};
-      font-weight: bold;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: font-size 0.3s;
-
-      &:hover {
-        color: ${({ theme }) => theme.colors.primary};
-      }
-    }
-
-    &.show {
-      opacity: 1;
-    }
-  }
-
   .logos {
     display: flex;
     gap: 1rem;
@@ -186,7 +119,12 @@ const StyledHeader = styled.header`
   }
 
   @media (max-width: 480px) {
-    display: none; /* Hide the entire header on mobile */
+    .logos {
+      margin-right: 1rem;
+    }
+    nav {
+      display: none; // Ensure nav items never show on mobile
+    }
   }
 `;
 
