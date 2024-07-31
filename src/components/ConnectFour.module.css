@@ -17,10 +17,11 @@
   
   .board {
     margin: 20px auto; /* Add margin to create space between the board and the button */
+    
     border-collapse: collapse;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
     background: #90EEBF;
-    border-radius: 20px;
+    border-radius: 10px;
     overflow: hidden;
   }
   
