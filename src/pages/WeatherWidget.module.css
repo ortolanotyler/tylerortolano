@@ -1,19 +1,18 @@
 .container {
     text-align: center;
     padding: 1rem;
-    background-color: #87CEEB; /* Sky blue background */
+    background-color: white; /* Sky blue background */
     border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
-    width: 500px;
+    width: 100%;
     margin: 0 auto;
     border: 2.5px solid white; /* 1px white border */
     margin-bottom: 20px; /* Add bottom margin to ensure space below */
 }
 
 .input {
-    width: 30%;
+    width: 3%;
     padding: 10px;
-    margin-bottom: 10px;
+   
     border-radius: 5px;
     border: 1px solid #ccc;
     background-color: white;
@@ -23,13 +22,14 @@
 .icon-button {
     background-color: transparent;
     border: none;
+    padding: 1rem;
     cursor: pointer;
-    margin-top: 10px;
+   
 }
 
 .icon {
-    font-size: 3rem;
-    color: white; /* White color for the icon */
+    font-size: 30px;
+    color: #87CEEB; /* White color for the icon */
 }
 
 .icon-button:focus,
@@ -41,10 +41,10 @@
 
 .result {
     margin-top: 20px;
-    font-size: 1.2rem;
-    color: white;
+    font-size: 1rem;
+    color: #87CEEB;
     height: 60px; /* Set a fixed height */
-    line-height: 1.5; /* Adjust line height for readability */
+    line-height: 1.25; /* Adjust line height for readability */
     overflow: hidden; /* Hide overflow text */
     white-space: nowrap; /* Prevent text from wrapping */
     text-overflow: ellipsis; /* Add ellipsis if text overflows */
