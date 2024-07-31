@@ -1,0 +1,41 @@
+.container {
+    text-align: center;
+    padding: 100px;
+    background-color: #87CEEB; /* Sky blue background */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    width: 500px;
+    margin: 0 auto;
+    border: 2.5px solid white; /* 1px white border */
+    margin-bottom: 20px; /* Add bottom margin to ensure space below */
+  }
+  
+  .input {
+    width: 30%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: white;
+    color: #000000;
+  }
+  
+  .icon-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .icon {
+    font-size: 3rem;
+    color: white; /* White color for the icon */
+  }
+  
+  .icon-button:focus,
+  .icon-button:hover,
+  .icon-button:active {
+    outline: none;
+    background-color: transparent; /* Ensure no background color change on interaction */
+  }
+  

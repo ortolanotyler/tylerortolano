@@ -11,6 +11,7 @@ import Skills from './pages/Skills';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Games from './pages/Games';
+import WeatherWidget from './pages/WeatherWidget';
 
 const App = () => (
   <MuiThemeProvider theme={theme.muiTheme}>
@@ -24,6 +25,7 @@ const App = () => (
           <Skills />
           <Projects />
           <Games /> {/* Include the new Games page */}
+          <WeatherWidget /> {/* Include the new Weather widget */}
           <Contact />
         </main>
         <Footer />
@@ -33,3 +35,4 @@ const App = () => (
 );
 
 export default App;
+
