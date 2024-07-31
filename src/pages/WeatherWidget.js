@@ -1,24 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { WbSunny } from '@mui/icons-material';
-import { IconButton } from '@mui/material';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCloudSun } from '@fortawesome/free-solid-svg-icons';
 import styles from './WeatherWidget.module.css';
 
 const WeatherForecast = () => {
-  const [place, setPlace] = useState('');
   const [temperature, setTemperature] = useState(null);
   const [condition, setCondition] = useState('');
+  const [error, setError] = useState('');
 
-  const handleSearch = async () => {
+  useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(handleLocationSuccess, handleLocationError);
+    } else {
+      setError('Geolocation is not supported by this browser.');
+    }
+  }, []);
+
+  const handleLocationSuccess = async (position) => {
+    const { latitude, longitude } = position.coords;
+    await fetchWeather(latitude, longitude);
+  };
+
+  const handleLocationError = () => {
+    setError('Unable to retrieve your location.');
+  };
+
+  const fetchWeather = async (latitude, longitude) => {
     try {
-      // Get latitude and longitude
-      const geocodeResponse = await axios.get(`https://api.opencagedata.com/geocode/v1/json?q=${place}&key=2bbf01aacb3c4a07be9312509cbe14ab`);
-      const { lat, lng } = geocodeResponse.data.results[0].geometry;
-
       // Get tomorrow's weather
-      const weatherResponse = await axios.get(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lng}&daily=temperature_2m_max,weathercode&timezone=auto`);
-      const tomorrowTempCelsius = weatherResponse.data.daily.temperature_2m_max[1]; // Get tomorrow's max temperature in Celsius
-      const tomorrowConditionCode = weatherResponse.data.daily.weathercode[1]; // Get tomorrow's weather condition code
+      const weatherResponse = await axios.get(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=temperature_2m_max,weathercode&timezone=auto`);
+      const tomorrowTemp = weatherResponse.data.daily.temperature_2m_max[1]; // Get tomorrow's max temperature
+      const tomorrowConditionCode = weatherResponse.data.daily.weathercode[1]; // Get tomorrow's weather condition
 
       const weatherConditions = {
         0: 'Clear sky',
@@ -53,39 +66,27 @@ const WeatherForecast = () => {
 
       const tomorrowCondition = weatherConditions[tomorrowConditionCode] || 'Unknown condition';
 
-      const tomorrowTempFahrenheit = (tomorrowTempCelsius * 9/5) + 32; // Convert to Fahrenheit
-
-      setTemperature({
-        celsius: tomorrowTempCelsius,
-        fahrenheit: tomorrowTempFahrenheit,
-      });
+      setTemperature(tomorrowTemp);
       setCondition(tomorrowCondition);
     } catch (err) {
       setTemperature(null);
-      setCondition('Error fetching data.');
+      setCondition('');
+      setError('Error fetching weather data.');
     }
   };
 
   return (
     <div className={styles.container}>
-      <div className={styles.inputContainer}>
-        <input
-          type="text"
-          value={place}
-          onChange={(e) => setPlace(e.target.value)}
-          placeholder="Enter a place"
-          className={styles.input}
-        />
-        <IconButton onClick={handleSearch} className={styles.iconButton}>
-          <WbSunny className={styles.icon} />
-        </IconButton>
-      </div>
+      <button onClick={() => { navigator.geolocation.getCurrentPosition(handleLocationSuccess, handleLocationError); }} className={styles['icon-button']}>
+        <FontAwesomeIcon icon={faCloudSun} className={styles.icon} />
+      </button>
       {temperature !== null && (
         <div className={styles.result}>
-          <h3>Tomorrow's Max Temperature: {temperature.celsius}°C / {temperature.fahrenheit}°F</h3>
+          <h3>Tomorrow's Max Temperature: {temperature}°C</h3>
           <h4>Condition: {condition}</h4>
         </div>
       )}
+      {error && <p className={styles.error}>{error}</p>}
     </div>
   );
 };
