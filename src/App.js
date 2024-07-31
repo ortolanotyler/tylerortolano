@@ -24,9 +24,10 @@ const App = () => (
           <Home />
           <About />
           <Skills />
+          <Widgets /> {/* Include the new Weather widget */}
+
           <Projects />
           <Games /> {/* Include the new Games page */}
-          <Widgets /> {/* Include the new Weather widget */}
           <Contact />
         </main>
         <Footer />

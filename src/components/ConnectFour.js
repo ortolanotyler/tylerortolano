@@ -81,7 +81,6 @@ const ConnectFour = () => {
   return (
     <div className={styles.ConnectFour}>
       <h1>Connect Four</h1>
-      {winner && <div className={styles.alert}>{winner}</div>}
       <Button
         variant="contained"
         color="primary"

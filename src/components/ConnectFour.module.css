@@ -20,16 +20,18 @@
     
     border-collapse: collapse;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
-    background: #90EEBF;
-    border-radius: 10px;
+    background: #87CEEB;
+    border-radius: 5px;
     overflow: hidden;
   }
   
   .cell {
     width: 50px;
     height: 50px;
-    border: solid 1px white;
+    border: solid 2px white;
     position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+
   }
   
   .piece {
@@ -66,7 +68,7 @@
   .columnTop {
     border: dashed 1px lightgray;
     cursor: pointer;
-    background-color: lightgreen;
+    background: transparent;
     transition: background-color 0.3s;
   }
   

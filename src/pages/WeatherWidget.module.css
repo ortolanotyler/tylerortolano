@@ -1,4 +1,3 @@
-/* src/components/WeatherWidget.module.css */
 .container {
     text-align: center;
     padding: 50px;
@@ -7,20 +6,18 @@
     max-width: 500px;
     margin: 0 auto;
     border: 2.5px solid white;
-    margin-bottom: 20px;
+    
   }
   
   .icon-button {
     background-color: transparent;
     border: none;
     cursor: pointer;
-   
   }
   
   .icon {
-    font-size: 3rem;
-    color: #87CEEB; /* White color for the icon */
-
+    font-size: 5rem;
+    color: #87CEEB; /* Blue color for the icon */
   }
   
   .icon-button:focus,
@@ -48,8 +45,13 @@
   }
   
   .result {
-    margin-top: 20px;
-    font-size: 1.2rem;
+    margin-top: 10px;
+    font-size: 1rem;
     color: #87CEEB;
   }
-  
+
+  h2 {
+    font-size: 1rem;
+    color: #87CEEB;
+    margin-bottom: 15px;
+  }
