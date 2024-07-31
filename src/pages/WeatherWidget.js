@@ -1,20 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-import { WbSunny, Cloud, AcUnit, Grain, Thunderstorm } from '@mui/icons-material'; // Removed Foggy
+import { WbSunny, Cloud, AcUnit, Grain, Thunderstorm, LocationOn } from '@mui/icons-material';
 import styles from './WeatherWidget.module.css';
 
 const WeatherForecast = () => {
   const [temperature, setTemperature] = useState(null);
   const [condition, setCondition] = useState('');
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false); // New state to track loading status
+  const [locationRequested, setLocationRequested] = useState(false);
 
-  useEffect(() => {
+  const handleLocationRequest = () => {
     if (navigator.geolocation) {
+      setLoading(true); // Start loading
       navigator.geolocation.getCurrentPosition(handleLocationSuccess, handleLocationError);
+      setLocationRequested(true);
     } else {
       setError('Geolocation is not supported by this browser.');
     }
-  }, []);
+  };
 
   const handleLocationSuccess = async (position) => {
     const { latitude, longitude } = position.coords;
@@ -22,6 +26,7 @@ const WeatherForecast = () => {
   };
 
   const handleLocationError = () => {
+    setLoading(false); // Stop loading on error
     setError('Unable to retrieve your location.');
   };
 
@@ -66,7 +71,9 @@ const WeatherForecast = () => {
 
       setTemperature(tomorrowTemp);
       setCondition(tomorrowCondition);
+      setLoading(false); // Stop loading when data is fetched
     } catch (err) {
+      setLoading(false); // Stop loading on error
       setTemperature(null);
       setCondition('');
       setError('Error fetching weather data.');
@@ -104,14 +111,14 @@ const WeatherForecast = () => {
       case 'Thunderstorm with heavy hail':
         return <Thunderstorm className={styles.icon} />;
       default:
-        return null;
+        return <LocationOn className={`${styles.icon} ${loading ? styles.blink : ''}`} />; // Default location icon with blinking effect
     }
   };
 
   return (
     <div className={styles.container}>
-      <button onClick={() => { navigator.geolocation.getCurrentPosition(handleLocationSuccess, handleLocationError); }} className={styles['icon-button']}>
-        {renderWeatherIcon(condition)}
+      <button onClick={handleLocationRequest} className={styles['icon-button']}>
+        {renderWeatherIcon(locationRequested ? condition : null)}
       </button>
       {temperature !== null && (
         <div className={styles.result}>

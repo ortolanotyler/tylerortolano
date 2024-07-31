@@ -1,51 +1,54 @@
+/* src/components/WeatherWidget.module.css */
 .container {
     text-align: center;
-    padding: 1rem;
+    padding: 100px;
     background-color: white; /* Sky blue background */
     border-radius: 5px;
-    width: 100%;
+    width: 500px;
     margin: 0 auto;
-    border: 2.5px solid white; /* 1px white border */
-    margin-bottom: 20px; /* Add bottom margin to ensure space below */
-}
-
-.input {
-    width: 3%;
-    padding: 10px;
-   
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    background-color: white;
-    color: #000000;
-}
-
-.icon-button {
+    border: 2.5px solid white;
+    margin-bottom: 20px;
+  }
+  
+  .icon-button {
     background-color: transparent;
     border: none;
-    padding: 1rem;
     cursor: pointer;
-   
-}
-
-.icon {
-    font-size: 30px;
+    margin-top: 10px;
+  }
+  
+  .icon {
+    font-size: 3rem;
     color: #87CEEB; /* White color for the icon */
-}
-
-.icon-button:focus,
-.icon-button:hover,
-.icon-button:active {
+  }
+  
+  .icon-button:focus,
+  .icon-button:hover,
+  .icon-button:active {
     outline: none;
     background-color: transparent; /* Ensure no background color change on interaction */
-}
-
-.result {
+  }
+  
+  .blink {
+    animation: blink-animation 1s steps(5, start) infinite;
+    -webkit-animation: blink-animation 1s steps(5, start) infinite;
+  }
+  
+  @keyframes blink-animation {
+    to {
+      visibility: hidden;
+    }
+  }
+  
+  @-webkit-keyframes blink-animation {
+    to {
+      visibility: hidden;
+    }
+  }
+  
+  .result {
     margin-top: 20px;
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: #87CEEB;
-    height: 60px; /* Set a fixed height */
-    line-height: 1.25; /* Adjust line height for readability */
-    overflow: hidden; /* Hide overflow text */
-    white-space: nowrap; /* Prevent text from wrapping */
-    text-overflow: ellipsis; /* Add ellipsis if text overflows */
-}
+  }
+  
