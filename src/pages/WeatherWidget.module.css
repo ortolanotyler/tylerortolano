@@ -1,10 +1,10 @@
 /* src/components/WeatherWidget.module.css */
 .container {
     text-align: center;
-    padding: 100px;
+    padding: 50px;
     background-color: white; /* Sky blue background */
     border-radius: 5px;
-    width: 500px;
+    max-width: 500px;
     margin: 0 auto;
     border: 2.5px solid white;
     margin-bottom: 20px;
@@ -14,12 +14,13 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
-    margin-top: 10px;
+   
   }
   
   .icon {
     font-size: 3rem;
     color: #87CEEB; /* White color for the icon */
+
   }
   
   .icon-button:focus,
@@ -30,7 +31,7 @@
   }
   
   .blink {
-    animation: blink-animation 1s steps(5, start) infinite;
+    animation: blink-animation 0.2s steps(5, start) infinite;
     -webkit-animation: blink-animation 1s steps(5, start) infinite;
   }
   
