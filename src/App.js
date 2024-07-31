@@ -12,6 +12,7 @@ import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Games from './pages/Games';
 import WeatherWidget from './pages/WeatherWidget';
+import Widgets from './pages/Widgets';
 
 const App = () => (
   <MuiThemeProvider theme={theme.muiTheme}>
@@ -25,7 +26,7 @@ const App = () => (
           <Skills />
           <Projects />
           <Games /> {/* Include the new Games page */}
-          <WeatherWidget /> {/* Include the new Weather widget */}
+          <Widgets /> {/* Include the new Weather widget */}
           <Contact />
         </main>
         <Footer />

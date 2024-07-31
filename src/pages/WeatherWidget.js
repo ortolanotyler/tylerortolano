@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCloudSun } from '@fortawesome/free-solid-svg-icons';
+import { WbSunny, Cloud, AcUnit, Grain, Thunderstorm } from '@mui/icons-material'; // Removed Foggy
 import styles from './WeatherWidget.module.css';
 
 const WeatherForecast = () => {
@@ -28,7 +27,6 @@ const WeatherForecast = () => {
 
   const fetchWeather = async (latitude, longitude) => {
     try {
-      // Get tomorrow's weather
       const weatherResponse = await axios.get(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=temperature_2m_max,weathercode&timezone=auto`);
       const tomorrowTemp = weatherResponse.data.daily.temperature_2m_max[1]; // Get tomorrow's max temperature
       const tomorrowConditionCode = weatherResponse.data.daily.weathercode[1]; // Get tomorrow's weather condition
@@ -75,15 +73,50 @@ const WeatherForecast = () => {
     }
   };
 
+  const renderWeatherIcon = (condition) => {
+    switch (condition) {
+      case 'Clear sky':
+      case 'Mainly clear':
+        return <WbSunny className={styles.icon} />;
+      case 'Partly cloudy':
+      case 'Overcast':
+        return <Cloud className={styles.icon} />;
+      case 'Fog':
+      case 'Depositing rime fog':
+        return <AcUnit className={styles.icon} />; // Using AcUnit for fog/mist conditions
+      case 'Rain':
+      case 'Drizzle: Light':
+      case 'Drizzle: Moderate':
+      case 'Drizzle: Dense intensity':
+      case 'Rain: Slight':
+      case 'Rain: Moderate':
+      case 'Rain: Heavy intensity':
+        return <Grain className={styles.icon} />;
+      case 'Snow fall: Slight':
+      case 'Snow fall: Moderate':
+      case 'Snow fall: Heavy intensity':
+      case 'Snow grains':
+      case 'Snow showers slight':
+      case 'Snow showers heavy':
+        return <AcUnit className={styles.icon} />;
+      case 'Thunderstorm: Slight or moderate':
+      case 'Thunderstorm with slight hail':
+      case 'Thunderstorm with heavy hail':
+        return <Thunderstorm className={styles.icon} />;
+      default:
+        return null;
+    }
+  };
+
   return (
     <div className={styles.container}>
       <button onClick={() => { navigator.geolocation.getCurrentPosition(handleLocationSuccess, handleLocationError); }} className={styles['icon-button']}>
-        <FontAwesomeIcon icon={faCloudSun} className={styles.icon} />
+        {renderWeatherIcon(condition)}
       </button>
       {temperature !== null && (
         <div className={styles.result}>
-          <h3>Tomorrow's Max Temperature: {temperature}°C</h3>
-          <h4>Condition: {condition}</h4>
+          <h3>{temperature}°C</h3>
+          <h4>{condition}</h4>
         </div>
       )}
       {error && <p className={styles.error}>{error}</p>}
