@@ -10,10 +10,7 @@ import About from './pages/About';
 import Skills from './pages/Skills';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
-import Games from './pages/Games';
-import WeatherWidget from './pages/WeatherWidget';
 import Widgets from './pages/Widgets';
-import ProjectSlider2 from './components/ProjectsSlider';
 
 const App = () => (
   <MuiThemeProvider theme={theme.muiTheme}>
@@ -25,10 +22,10 @@ const App = () => (
           <Home />
           <About />
           <Skills />
+          <Projects />
           <Widgets /> {/* Include the new Weather widget */}
 
-          <Projects />
-          <Games /> {/* Include the new Games page */}
+     
           <Contact />
         </main>
         <Footer />

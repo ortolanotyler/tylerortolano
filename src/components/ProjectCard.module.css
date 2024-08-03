@@ -3,17 +3,17 @@
     justify-content: center; /* Centers the card horizontally */
     align-items: center; /* Centers the card vertically if the container has height */
     padding: 20px;
-    min-height: 100vh; /* Optional: Ensures the container takes full height for vertical centering */
+    min-height: 50vh; /* Optional: Ensures the container takes full height for vertical centering */
   }
 
   .cardWrap {
     margin: 10px;
-    transform: perspective(1000px); /* Reduced perspective for less dramatic 3D effect */
+    transform: perspective(500px); /* Reduced perspective for less dramatic 3D effect */
     transform-style: preserve-3d;
     cursor: pointer;
     width: 100%;
-    max-width: 300px; 
-    height: 300px; 
+    max-width: 400px; 
+    height: 400px; 
     box-sizing: border-box;
 }
   

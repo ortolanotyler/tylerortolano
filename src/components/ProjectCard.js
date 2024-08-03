@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styles from './ProjectCard.module.css';
 
-const ProjectCard = ({ image, header, content }) => {
+const ProjectCard = ({ image, header, content, url }) => {
   const [mouseX, setMouseX] = useState(0);
   const [mouseY, setMouseY] = useState(0);
   const [width, setWidth] = useState(0);
@@ -24,11 +24,16 @@ const ProjectCard = ({ image, header, content }) => {
     setMouseY(0);
   };
 
+  const handleClick = () => {
+    if (url) {
+      window.open(url, '_blank');
+    }
+  };
+
   const rX = (mouseX / width) * 10; // Reduce the rotation angle
   const rY = (mouseY / height) * -10;
   const tX = (mouseX / width) * -10; // Adjust translation accordingly
   const tY = (mouseY / height) * -10;
-  
 
   return (
     <div 
@@ -36,6 +41,8 @@ const ProjectCard = ({ image, header, content }) => {
       onMouseMove={handleMouseMove} 
       onMouseLeave={handleMouseLeave} 
       ref={cardRef}
+      onClick={handleClick} // Add click event handler
+      style={{ cursor: url ? 'pointer' : 'default' }} // Change cursor if URL is provided
     >
       <div 
         className={styles.card} 

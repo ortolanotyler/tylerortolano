@@ -16,7 +16,11 @@ const About = () => {
           <Skyline />
         </SkylineContainer>
         <p>
-          I am a recent graduate of Springboard's Software Engineering course with a strong foundation in frontend and full stack development. Having relocated to Canada in early 2023 and obtained permanent residency, I am eager to begin a long-term career in the tech industry. I am proficient in React, JavaScript, HTML, and CSS, with hands-on experience in developing responsive web applications.
+        I am a versatile professional with a passion for solving complex problems, whether in software development or sales engineering. As a recent graduate of Springboard's Software Engineering course, I have developed a strong foundation in both frontend and full stack development. My expertise includes React, JavaScript, HTML, and CSS, and I have hands-on experience in building responsive web applications.
+</p>
+<br/>
+<p>
+Having relocated to Canada mid-2023 and obtained permanent residency, I am excited to embark on a long-term career that leverages my technical skills and my background in sales. My experience as a top-performing Business Development Representative has honed my ability to identify market opportunities, develop strategic solutions, and deliver results. I am eager to contribute to a dynamic team where I can apply my skills in both technology and client-focused problem-solving.
         </p>
       </div>
     </StyledAbout>

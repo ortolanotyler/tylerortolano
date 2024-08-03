@@ -8,6 +8,7 @@
   box-sizing: border-box;
 }
 
+
 @media (max-width: 768px) {
   .projectGrid {
       padding: 10px;
