@@ -22,7 +22,6 @@ const Home = () => {
         <HeadshotContainer>
           <Headshot src={headshot} alt="Headshot" />
         </HeadshotContainer>
-        <h2>I'm a web developer.</h2>
       </TextContainer>
     </HomeContainer>
   );
@@ -106,8 +105,8 @@ const HeadshotContainer = styled.div`
 `;
 
 const Headshot = styled.img`
-  width: 250px;
-  height: 250px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
   object-fit: cover;
   border: 5px solid black; /* Black border */

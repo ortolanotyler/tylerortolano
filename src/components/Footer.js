@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Footer = () => (
   <StyledFooter>
-    <p>© 2024 Tyler Ortolano. All rights reserved.</p>
+    <p>© 2024 Tyler Ortolano.</p>
   </StyledFooter>
 );
 

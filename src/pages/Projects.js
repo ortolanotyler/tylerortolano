@@ -9,7 +9,10 @@ const Projects = () => {
 
   return (
     <StyledProjects id="projects">
-     
+     <div style = {{textAlign:'center' , color: '#61dafb' }}>
+     <h1>Projects</h1>
+     </div>
+   
       {/* Additional project content can be added here */}
       <ProjectSlider2/>
   
