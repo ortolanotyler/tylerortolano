@@ -5,27 +5,21 @@ const Header = () => {
   const [jiggleCount, setJiggleCount] = useState(0);
 
   const handleLogoClick = () => {
-    window.location.href = '/'; // Redirect to the home page (refresh)
+    const audio = new Audio(`${process.env.PUBLIC_URL}/click.wav`);
+    audio.play();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setJiggleCount(1); // Reset the jiggle after click
   };
 
   useEffect(() => {
     const jiggleInterval = setInterval(() => {
-      if (jiggleCount < 10) {
-        setJiggleCount(jiggleCount + 1);
-      } else {
-        clearInterval(jiggleInterval);
-      }
+      setJiggleCount((prev) => prev + 1);
     }, 5000);
-
-    const jiggleTimeout = setTimeout(() => {
-      setJiggleCount(1);
-    }, 3000);
 
     return () => {
       clearInterval(jiggleInterval);
-      clearTimeout(jiggleTimeout);
     };
-  }, [jiggleCount]);
+  }, []);
 
   const logo = `${process.env.PUBLIC_URL}/Images/logo.png`; // Adjust the path as needed
   const codepenLogo = `${process.env.PUBLIC_URL}/Images/codepen.png`;
@@ -129,3 +123,4 @@ const StyledHeader = styled.header`
 `;
 
 export default Header;
+

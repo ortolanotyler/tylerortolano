@@ -17,9 +17,7 @@ const About = () => {
 <SkylineContainer>
           <Skyline />
         </SkylineContainer>
-<p>
-Having relocated to Canada mid-2023 and obtained permanent residency, I am excited to embark on a long-term career that leverages my technical skills and my background in sales. My experience as a top-performing Business Development Representative has honed my ability to identify market opportunities, develop strategic solutions, and deliver results. I am eager to contribute to a dynamic team where I can apply my skills in both technology and client-focused problem-solving.
-        </p>
+
       </div>
     </StyledAbout>
   );
@@ -46,11 +44,9 @@ const StyledAbout = styled.section`
 
     h1 {
       font-size: 2rem;
-      margin-bottom: 1rem; /* Reduced space between h1 and p */
     }
 
     p {
-      margin-bottom: 1rem;
       line-height: 1.6;
     }
   }
@@ -58,7 +54,6 @@ const StyledAbout = styled.section`
 
 const SkylineContainer = styled.div`
   width: 100%;
-  margin-top: 1rem; /* Adjust the margin to control spacing between the text and the skyline */
 `;
 
 export default About;
