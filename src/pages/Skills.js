@@ -29,7 +29,6 @@ const StyledSkills = styled.section`
   justify-content: center;
   padding: 2.5rem;
   padding-top: 10px; /* Add padding to account for the fixed navbar */
-  background: ${({ theme }) => theme.colors.background};
   color: ${({ theme }) => theme.colors.text};
   min-height: 100vh;
 

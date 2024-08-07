@@ -22,6 +22,11 @@ const Home = () => {
         <HeadshotContainer>
           <Headshot src={headshot} alt="Headshot" />
         </HeadshotContainer>
+        <div style = {{color: '#87CEEB', fontFamily: 'League Spartan'}}>
+        <h1>I'm a web developer</h1>
+
+        </div>
+
       </TextContainer>
     </HomeContainer>
   );
@@ -70,13 +75,13 @@ const TextContainer = styled.div`
   h1 {
     font-size: 3rem;
     font-weight: 400;
-    color: ${({ theme }) => theme.colors.text};
+    color: ;
     margin-bottom: 1rem;
 
     &.accent {
       font-size: 5rem; /* Twice as big as the previous 4.5rem */
       font-weight: 700;
-      color: #f7931a; /* Bitcoin orange */
+      color: #87CEEB;
       font-family: 'League Spartan', sans-serif; /* New font */
     }
 

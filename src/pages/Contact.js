@@ -14,7 +14,6 @@ const Contact = () => (
 
 const StyledContact = styled.section`
   padding: 2rem;
-  background: ${({ theme }) => theme.colors.background};
   color: ${({ theme }) => theme.colors.text};
   min-height: 100vh;
 

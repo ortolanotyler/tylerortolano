@@ -21,9 +21,11 @@ const App = () => (
         <main>
           <Home />
           <About />
-          <Skills />
           <Projects />
+   <Skills />
           <Contact />
+       
+
           <Widgets /> {/* Include the new Weather widget */}
 
         </main>
