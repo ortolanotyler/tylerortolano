@@ -18,7 +18,7 @@ const About = () => {
         </SkylineContainer>
        
         <p>
-        I am a versatile professional with a passion for solving complex problems, whether in software development or sales engineering. As a recent graduate of Springboard's Software Engineering course, I have developed a strong foundation in both frontend and full stack development. My expertise includes React, JavaScript, HTML, and CSS, and I have hands-on experience in building responsive web applications.
+       As a recent graduate of Springboard's Software Engineering course, I have developed a strong foundation in both frontend and full stack development. I have 2 cats, i enjoy golf, and i'd love to help your business grow with a brand new site. Check out some of my work below!
 </p>
 
 
